@@ -1,0 +1,9 @@
+[
+  {"channel":"harness","controller":"agent"},
+  {"channel":"send","session":"tab-a","message":{"id":1,"method":"Page.navigate","params":{"url":"https://fixture.invalid/start"}}},
+  {"channel":"receive","session":"tab-a","message":{"method":"Network.requestWillBeSent","params":{"requestId":"nav-1","loaderId":"load-1","frameId":"frame-1","type":"Document","request":{"url":"https://fixture.invalid/start","method":"GET"},"initiator":{"type":"other"}}}},
+  {"channel":"harness","controller":"human"},
+  {"channel":"receive","session":"tab-a","message":{"method":"Network.requestWillBeSent","params":{"requestId":"nav-1","loaderId":"load-1","frameId":"frame-1","type":"Document","redirectResponse":{"url":"https://fixture.invalid/start","status":302},"request":{"url":"https://fixture.invalid/redirected","method":"GET"},"initiator":{"type":"other"}}}},
+  {"channel":"receive","session":"tab-a","message":{"id":1,"result":{"frameId":"frame-1","loaderId":"load-1"}}},
+  {"channel":"receive","session":"tab-a","message":{"method":"Network.requestWillBeSent","params":{"requestId":"fetch-2","loaderId":"load-1","frameId":"frame-1","type":"Fetch","request":{"url":"https://fixture.invalid/delayed","method":"GET"},"initiator":{"type":"script","stack":{"callFrames":[{"url":"https://fixture.invalid/start","functionName":"later"}]}}}}}
+]

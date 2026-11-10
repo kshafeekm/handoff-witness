@@ -1,0 +1,581 @@
+{
+  "kind": "controlled_attribution_evaluation",
+  "protocol": "handoff-witness/attribution-workload/v1",
+  "manifest_sha256": "7aa4ed089300170981a2d71ed801395156e6ccc59b6d5f0c4de6565b445a2f29",
+  "browser_version": "156.0.8078.80",
+  "playwright_version": "1.64.1",
+  "python_version": "3.14.7",
+  "platform": "macOS-26.6-arm64-arm-64bit-Mach-O",
+  "trial_count": 40,
+  "target_count": 75,
+  "valid_for_analysis": true,
+  "non_target_receiver_paths": {},
+  "metrics": {
+    "provenance": {
+      "total_targets": 75,
+      "observed_targets": 70,
+      "known_predictions": 45,
+      "correct_predictions": 45,
+      "unknown_predictions": 25,
+      "missing_predictions": 5,
+      "observation_coverage": 0.9333333333333333,
+      "attribution_coverage": 0.6,
+      "conditional_accuracy": 1.0,
+      "correct_fraction_all_requests": 0.6,
+      "false_human_count": 0,
+      "false_agent_count": 0,
+      "confusion": {
+        "agent": {
+          "agent": 45,
+          "human": 0,
+          "mixed": 0,
+          "unknown": 10,
+          "missing": 5
+        },
+        "human": {
+          "agent": 0,
+          "human": 0,
+          "mixed": 0,
+          "unknown": 15,
+          "missing": 0
+        }
+      }
+    },
+    "current_controller": {
+      "total_targets": 75,
+      "observed_targets": 70,
+      "known_predictions": 70,
+      "correct_predictions": 50,
+      "unknown_predictions": 0,
+      "missing_predictions": 5,
+      "observation_coverage": 0.9333333333333333,
+      "attribution_coverage": 0.9333333333333333,
+      "conditional_accuracy": 0.7142857142857143,
+      "correct_fraction_all_requests": 0.6666666666666666,
+      "false_human_count": 15,
+      "false_agent_count": 5,
+      "confusion": {
+        "agent": {
+          "agent": 40,
+          "human": 15,
+          "mixed": 0,
+          "unknown": 0,
+          "missing": 5
+        },
+        "human": {
+          "agent": 5,
+          "human": 10,
+          "mixed": 0,
+          "unknown": 0,
+          "missing": 0
+        }
+      }
+    }
+  },
+  "by_scenario": {
+    "agent_direct": {
+      "provenance": {
+        "total_targets": 5,
+        "observed_targets": 5,
+        "known_predictions": 5,
+        "correct_predictions": 5,
+        "unknown_predictions": 0,
+        "missing_predictions": 0,
+        "observation_coverage": 1.0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction_all_requests": 1.0,
+        "false_human_count": 0,
+        "false_agent_count": 0,
+        "confusion": {
+          "agent": {
+            "agent": 5,
+            "human": 0,
+            "mixed": 0,
+            "unknown": 0,
+            "missing": 0
+          },
+          "human": {
+            "agent": 0,
+            "human": 0,
+            "mixed": 0,
+            "unknown": 0,
+            "missing": 0
+          }
+        }
+      },
+      "current_controller": {
+        "total_targets": 5,
+        "observed_targets": 5,
+        "known_predictions": 5,
+        "correct_predictions": 5,
+        "unknown_predictions": 0,
+        "missing_predictions": 0,
+        "observation_coverage": 1.0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction_all_requests": 1.0,
+        "false_human_count": 0,
+        "false_agent_count": 0,
+        "confusion": {
+          "agent": {
+            "agent": 5,
+            "human": 0,
+            "mixed": 0,
+            "unknown": 0,
+            "missing": 0
+          },
+          "human": {
+            "agent": 0,
+            "human": 0,
+            "mixed": 0,
+            "unknown": 0,
+            "missing": 0
+          }
+        }
+      }
+    },
+    "agent_redirect_stable": {
+      "provenance": {
+        "total_targets": 15,
+        "observed_targets": 15,
+        "known_predictions": 15,
+        "correct_predictions": 15,
+        "unknown_predictions": 0,
+        "missing_predictions": 0,
+        "observation_coverage": 1.0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction_all_requests": 1.0,
+        "false_human_count": 0,
+        "false_agent_count": 0,
+        "confusion": {
+          "agent": {
+            "agent": 15,
+            "human": 0,
+            "mixed": 0,
+            "unknown": 0,
+            "missing": 0
+          },
+          "human": {
+            "agent": 0,
+            "human": 0,
+            "mixed": 0,
+            "unknown": 0,
+            "missing": 0
+          }
+        }
+      },
+      "current_controller": {
+        "total_targets": 15,
+        "observed_targets": 15,
+        "known_predictions": 15,
+        "correct_predictions": 15,
+        "unknown_predictions": 0,
+        "missing_predictions": 0,
+        "observation_coverage": 1.0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction_all_requests": 1.0,
+        "false_human_count": 0,
+        "false_agent_count": 0,
+        "confusion": {
+          "agent": {
+            "agent": 15,
+            "human": 0,
+            "mixed": 0,
+            "unknown": 0,
+            "missing": 0
+          },
+          "human": {
+            "agent": 0,
+            "human": 0,
+            "mixed": 0,
+            "unknown": 0,
+            "missing": 0
+          }
+        }
+      }
+    },
+    "agent_redirect_handoff": {
+      "provenance": {
+        "total_targets": 15,
+        "observed_targets": 15,
+        "known_predictions": 15,
+        "correct_predictions": 15,
+        "unknown_predictions": 0,
+        "missing_predictions": 0,
+        "observation_coverage": 1.0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction_all_requests": 1.0,
+        "false_human_count": 0,
+        "false_agent_count": 0,
+        "confusion": {
+          "agent": {
+            "agent": 15,
+            "human": 0,
+            "mixed": 0,
+            "unknown": 0,
+            "missing": 0
+          },
+          "human": {
+            "agent": 0,
+            "human": 0,
+            "mixed": 0,
+            "unknown": 0,
+            "missing": 0
+          }
+        }
+      },
+      "current_controller": {
+        "total_targets": 15,
+        "observed_targets": 15,
+        "known_predictions": 15,
+        "correct_predictions": 5,
+        "unknown_predictions": 0,
+        "missing_predictions": 0,
+        "observation_coverage": 1.0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 0.3333333333333333,
+        "correct_fraction_all_requests": 0.3333333333333333,
+        "false_human_count": 10,
+        "false_agent_count": 0,
+        "confusion": {
+          "agent": {
+            "agent": 5,
+            "human": 10,
+            "mixed": 0,
+            "unknown": 0,
+            "missing": 0
+          },
+          "human": {
+            "agent": 0,
+            "human": 0,
+            "mixed": 0,
+            "unknown": 0,
+            "missing": 0
+          }
+        }
+      }
+    },
+    "agent_callback_handoff": {
+      "provenance": {
+        "total_targets": 10,
+        "observed_targets": 10,
+        "known_predictions": 5,
+        "correct_predictions": 5,
+        "unknown_predictions": 5,
+        "missing_predictions": 0,
+        "observation_coverage": 1.0,
+        "attribution_coverage": 0.5,
+        "conditional_accuracy": 1.0,
+        "correct_fraction_all_requests": 0.5,
+        "false_human_count": 0,
+        "false_agent_count": 0,
+        "confusion": {
+          "agent": {
+            "agent": 5,
+            "human": 0,
+            "mixed": 0,
+            "unknown": 5,
+            "missing": 0
+          },
+          "human": {
+            "agent": 0,
+            "human": 0,
+            "mixed": 0,
+            "unknown": 0,
+            "missing": 0
+          }
+        }
+      },
+      "current_controller": {
+        "total_targets": 10,
+        "observed_targets": 10,
+        "known_predictions": 10,
+        "correct_predictions": 5,
+        "unknown_predictions": 0,
+        "missing_predictions": 0,
+        "observation_coverage": 1.0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 0.5,
+        "correct_fraction_all_requests": 0.5,
+        "false_human_count": 5,
+        "false_agent_count": 0,
+        "confusion": {
+          "agent": {
+            "agent": 5,
+            "human": 5,
+            "mixed": 0,
+            "unknown": 0,
+            "missing": 0
+          },
+          "human": {
+            "agent": 0,
+            "human": 0,
+            "mixed": 0,
+            "unknown": 0,
+            "missing": 0
+          }
+        }
+      }
+    },
+    "unbound_agent_direct": {
+      "provenance": {
+        "total_targets": 5,
+        "observed_targets": 5,
+        "known_predictions": 0,
+        "correct_predictions": 0,
+        "unknown_predictions": 5,
+        "missing_predictions": 0,
+        "observation_coverage": 1.0,
+        "attribution_coverage": 0.0,
+        "conditional_accuracy": null,
+        "correct_fraction_all_requests": 0.0,
+        "false_human_count": 0,
+        "false_agent_count": 0,
+        "confusion": {
+          "agent": {
+            "agent": 0,
+            "human": 0,
+            "mixed": 0,
+            "unknown": 5,
+            "missing": 0
+          },
+          "human": {
+            "agent": 0,
+            "human": 0,
+            "mixed": 0,
+            "unknown": 0,
+            "missing": 0
+          }
+        }
+      },
+      "current_controller": {
+        "total_targets": 5,
+        "observed_targets": 5,
+        "known_predictions": 5,
+        "correct_predictions": 5,
+        "unknown_predictions": 0,
+        "missing_predictions": 0,
+        "observation_coverage": 1.0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction_all_requests": 1.0,
+        "false_human_count": 0,
+        "false_agent_count": 0,
+        "confusion": {
+          "agent": {
+            "agent": 5,
+            "human": 0,
+            "mixed": 0,
+            "unknown": 0,
+            "missing": 0
+          },
+          "human": {
+            "agent": 0,
+            "human": 0,
+            "mixed": 0,
+            "unknown": 0,
+            "missing": 0
+          }
+        }
+      }
+    },
+    "simulated_human_direct": {
+      "provenance": {
+        "total_targets": 5,
+        "observed_targets": 5,
+        "known_predictions": 0,
+        "correct_predictions": 0,
+        "unknown_predictions": 5,
+        "missing_predictions": 0,
+        "observation_coverage": 1.0,
+        "attribution_coverage": 0.0,
+        "conditional_accuracy": null,
+        "correct_fraction_all_requests": 0.0,
+        "false_human_count": 0,
+        "false_agent_count": 0,
+        "confusion": {
+          "agent": {
+            "agent": 0,
+            "human": 0,
+            "mixed": 0,
+            "unknown": 0,
+            "missing": 0
+          },
+          "human": {
+            "agent": 0,
+            "human": 0,
+            "mixed": 0,
+            "unknown": 5,
+            "missing": 0
+          }
+        }
+      },
+      "current_controller": {
+        "total_targets": 5,
+        "observed_targets": 5,
+        "known_predictions": 5,
+        "correct_predictions": 5,
+        "unknown_predictions": 0,
+        "missing_predictions": 0,
+        "observation_coverage": 1.0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction_all_requests": 1.0,
+        "false_human_count": 0,
+        "false_agent_count": 0,
+        "confusion": {
+          "agent": {
+            "agent": 0,
+            "human": 0,
+            "mixed": 0,
+            "unknown": 0,
+            "missing": 0
+          },
+          "human": {
+            "agent": 0,
+            "human": 5,
+            "mixed": 0,
+            "unknown": 0,
+            "missing": 0
+          }
+        }
+      }
+    },
+    "simulated_human_callback_handoff": {
+      "provenance": {
+        "total_targets": 10,
+        "observed_targets": 10,
+        "known_predictions": 0,
+        "correct_predictions": 0,
+        "unknown_predictions": 10,
+        "missing_predictions": 0,
+        "observation_coverage": 1.0,
+        "attribution_coverage": 0.0,
+        "conditional_accuracy": null,
+        "correct_fraction_all_requests": 0.0,
+        "false_human_count": 0,
+        "false_agent_count": 0,
+        "confusion": {
+          "agent": {
+            "agent": 0,
+            "human": 0,
+            "mixed": 0,
+            "unknown": 0,
+            "missing": 0
+          },
+          "human": {
+            "agent": 0,
+            "human": 0,
+            "mixed": 0,
+            "unknown": 10,
+            "missing": 0
+          }
+        }
+      },
+      "current_controller": {
+        "total_targets": 10,
+        "observed_targets": 10,
+        "known_predictions": 10,
+        "correct_predictions": 5,
+        "unknown_predictions": 0,
+        "missing_predictions": 0,
+        "observation_coverage": 1.0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 0.5,
+        "correct_fraction_all_requests": 0.5,
+        "false_human_count": 0,
+        "false_agent_count": 5,
+        "confusion": {
+          "agent": {
+            "agent": 0,
+            "human": 0,
+            "mixed": 0,
+            "unknown": 0,
+            "missing": 0
+          },
+          "human": {
+            "agent": 5,
+            "human": 5,
+            "mixed": 0,
+            "unknown": 0,
+            "missing": 0
+          }
+        }
+      }
+    },
+    "agent_worker_handoff": {
+      "provenance": {
+        "total_targets": 10,
+        "observed_targets": 5,
+        "known_predictions": 5,
+        "correct_predictions": 5,
+        "unknown_predictions": 0,
+        "missing_predictions": 5,
+        "observation_coverage": 0.5,
+        "attribution_coverage": 0.5,
+        "conditional_accuracy": 1.0,
+        "correct_fraction_all_requests": 0.5,
+        "false_human_count": 0,
+        "false_agent_count": 0,
+        "confusion": {
+          "agent": {
+            "agent": 5,
+            "human": 0,
+            "mixed": 0,
+            "unknown": 0,
+            "missing": 5
+          },
+          "human": {
+            "agent": 0,
+            "human": 0,
+            "mixed": 0,
+            "unknown": 0,
+            "missing": 0
+          }
+        }
+      },
+      "current_controller": {
+        "total_targets": 10,
+        "observed_targets": 5,
+        "known_predictions": 5,
+        "correct_predictions": 5,
+        "unknown_predictions": 0,
+        "missing_predictions": 5,
+        "observation_coverage": 0.5,
+        "attribution_coverage": 0.5,
+        "conditional_accuracy": 1.0,
+        "correct_fraction_all_requests": 0.5,
+        "false_human_count": 0,
+        "false_agent_count": 0,
+        "confusion": {
+          "agent": {
+            "agent": 5,
+            "human": 0,
+            "mixed": 0,
+            "unknown": 0,
+            "missing": 5
+          },
+          "human": {
+            "agent": 0,
+            "human": 0,
+            "mixed": 0,
+            "unknown": 0,
+            "missing": 0
+          }
+        }
+      }
+    }
+  },
+  "limitations": [
+    "Eight authored templates, not representative or held-out browsing.",
+    "Human labels and handoffs are simulated by a trusted harness; no physical input or LLM tested.",
+    "Delayed callback/worker sources are fixture assignments, not independently secured causal evidence.",
+    "Receiver and driver share a process. Labels are withheld from collector input, not from the trusted experiment operator.",
+    "Repeated templates are not independent population samples; no population confidence interval is inferred.",
+    "This evaluates the observation adapter, not the approval broker or end-to-end legal compliance."
+  ]
+}

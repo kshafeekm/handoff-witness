@@ -1,0 +1,108 @@
+{
+  "primary_seed": 20261109,
+  "replication_seed": 20261110,
+  "same_aggregate_metrics": true,
+  "same_scenario_metrics": true,
+  "full_errors_by_scenario": {
+    "unbound_agent_direct": 5
+  },
+  "full_contested_by_scenario": {
+    "human_click_on_agent_page": 5,
+    "agent_click_on_human_page": 5
+  },
+  "full_missing_by_scenario": {
+    "adv_popup_handoff": 5
+  },
+  "loss_functions": {
+    "current_controller": "80e + 5m",
+    "lineage_without_exclusion": "0e + 5c + 45u + 5m",
+    "full": "5e + 10c + 0u + 5m"
+  },
+  "exclusion_tradeoff": {
+    "extra_wrong": 5,
+    "extra_contested": 5,
+    "fewer_unknown": 45
+  },
+  "browser_version": "157.0.8103.38",
+  "variants": {
+    "v1_navigation_redirect": [
+      "navigation",
+      "redirect"
+    ],
+    "plus_document_lineage": [
+      "document_lineage",
+      "navigation",
+      "redirect",
+      "renderer_navigation"
+    ],
+    "plus_worker": [
+      "document_lineage",
+      "navigation",
+      "redirect",
+      "renderer_navigation",
+      "worker"
+    ],
+    "plus_agent_script": [
+      "agent_script",
+      "document_lineage",
+      "navigation",
+      "redirect",
+      "renderer_navigation",
+      "worker"
+    ],
+    "plus_input_taint": [
+      "agent_script",
+      "document_lineage",
+      "input_taint",
+      "navigation",
+      "redirect",
+      "renderer_navigation",
+      "worker"
+    ],
+    "full": [
+      "agent_script",
+      "document_lineage",
+      "exclusion",
+      "input_taint",
+      "navigation",
+      "redirect",
+      "renderer_navigation",
+      "worker"
+    ],
+    "full_without_input_taint": [
+      "agent_script",
+      "document_lineage",
+      "exclusion",
+      "navigation",
+      "redirect",
+      "renderer_navigation",
+      "worker"
+    ],
+    "full_without_agent_script": [
+      "document_lineage",
+      "exclusion",
+      "input_taint",
+      "navigation",
+      "redirect",
+      "renderer_navigation",
+      "worker"
+    ],
+    "full_without_worker": [
+      "agent_script",
+      "document_lineage",
+      "exclusion",
+      "input_taint",
+      "navigation",
+      "redirect",
+      "renderer_navigation"
+    ],
+    "full_without_document_lineage": [
+      "agent_script",
+      "exclusion",
+      "input_taint",
+      "navigation",
+      "redirect",
+      "worker"
+    ]
+  }
+}

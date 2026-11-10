@@ -1,0 +1,34 @@
+\begin{table}[tb]
+\centering\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabularx}{\linewidth}{@{}Xlrrrrrrr@{}}
+\toprule
+& & & \multicolumn{5}{c}{Lineage with exclusion} & Controller \\
+\cmidrule(lr){4-8}\cmidrule(l){9-9}
+Scenario & Group & $N$ & Corr. & Wrong & Cont. & Unk. & Miss. & Wrong \\
+\midrule
+Agent navigation & v0.1 & 5 & 5 & 0 & 0 & 0 & 0 & 0 \\
+Redirect, stable control & v0.1 & 15 & 15 & 0 & 0 & 0 & 0 & 0 \\
+Redirect, takeover & v0.1 & 15 & 15 & 0 & 0 & 0 & 0 & 10 \\
+Page timer, takeover & v0.1 & 10 & 10 & 0 & 0 & 0 & 0 & 5 \\
+Agent bypasses mediation & v0.1 & 5 & 0 & 5 & 0 & 0 & 0 & 0 \\
+Human navigation & v0.1 & 5 & 5 & 0 & 0 & 0 & 0 & 0 \\
+Human page timer, takeover & v0.1 & 10 & 10 & 0 & 0 & 0 & 0 & 5 \\
+Worker, takeover & v0.1 & 10 & 10 & 0 & 0 & 0 & 0 & 5 \\
+Injected script, takeover & Mediated & 10 & 10 & 0 & 0 & 0 & 0 & 5 \\
+Agent click, takeover & Mediated & 10 & 10 & 0 & 0 & 0 & 0 & 5 \\
+Human click on agent page & Mediated & 10 & 5 & 0 & 5 & 0 & 0 & 0 \\
+Injected script on human page & Mediated & 10 & 10 & 0 & 0 & 0 & 0 & 5 \\
+Agent click on human page & Mediated & 10 & 5 & 0 & 5 & 0 & 0 & 5 \\
+Meta refresh & Adversarial & 10 & 10 & 0 & 0 & 0 & 0 & 5 \\
+Script navigation & Adversarial & 10 & 10 & 0 & 0 & 0 & 0 & 5 \\
+Form auto-submit & Adversarial & 10 & 10 & 0 & 0 & 0 & 0 & 5 \\
+Popup (window.open) & Adversarial & 10 & 5 & 0 & 0 & 0 & 5 & 0 \\
+Iframe fetch & Adversarial & 15 & 15 & 0 & 0 & 0 & 0 & 10 \\
+Forged agent sourceURL & Adversarial & 10 & 10 & 0 & 0 & 0 & 0 & 5 \\
+Synthetic input events & Adversarial & 10 & 10 & 0 & 0 & 0 & 0 & 5 \\
+\bottomrule
+\end{tabularx}
+\caption{Primary run by scenario (five trials each; $N$ counts target requests). Group v0.1 repeats the earlier workload; Mediated adds agent actions through the mediated channel and human input on agent pages; Adversarial pages try to move requests out of, or into, agent lineage.}
+\label{tab:scenarios}
+\end{table}

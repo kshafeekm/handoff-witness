@@ -1,0 +1,4506 @@
+{
+  "kind": "controlled_attribution_evaluation",
+  "protocol": "handoff-witness/attribution-workload/v2",
+  "manifest_sha256": "c37421e7a1fbd392900ab722dd5bc6965b22faaab1ac430dc704aa7540ed6d1d",
+  "browser_version": "157.0.8103.38",
+  "playwright_version": "1.64.1",
+  "python_version": "3.14.7",
+  "platform": "macOS-26.6-arm64-arm-64bit-Mach-O",
+  "trial_count": 100,
+  "target_count": 200,
+  "valid_for_analysis": true,
+  "failed_trials": [],
+  "metrics": {
+    "current_controller": {
+      "total_targets": 200,
+      "correct": 115,
+      "wrong": 80,
+      "contested": 0,
+      "unknown": 0,
+      "missing": 5,
+      "attribution_coverage": 0.975,
+      "conditional_accuracy": 0.5897435897435898,
+      "correct_fraction": 0.575,
+      "false_agent": 10,
+      "false_not_agent": 70,
+      "confusion": {
+        "agent->agent": 85,
+        "agent->human": 70,
+        "agent->missing": 5,
+        "human->agent": 10,
+        "human->human": 30
+      }
+    },
+    "v1_navigation_redirect": {
+      "total_targets": 200,
+      "correct": 90,
+      "wrong": 0,
+      "contested": 0,
+      "unknown": 105,
+      "missing": 5,
+      "attribution_coverage": 0.45,
+      "conditional_accuracy": 1.0,
+      "correct_fraction": 0.45,
+      "false_agent": 0,
+      "false_not_agent": 0,
+      "confusion": {
+        "agent->agent": 90,
+        "agent->missing": 5,
+        "agent->unknown": 65,
+        "human->unknown": 40
+      }
+    },
+    "plus_document_lineage": {
+      "total_targets": 200,
+      "correct": 135,
+      "wrong": 5,
+      "contested": 0,
+      "unknown": 55,
+      "missing": 5,
+      "attribution_coverage": 0.7,
+      "conditional_accuracy": 0.9642857142857143,
+      "correct_fraction": 0.675,
+      "false_agent": 5,
+      "false_not_agent": 0,
+      "confusion": {
+        "agent->agent": 135,
+        "agent->missing": 5,
+        "agent->unknown": 20,
+        "human->agent": 5,
+        "human->unknown": 35
+      }
+    },
+    "plus_worker": {
+      "total_targets": 200,
+      "correct": 140,
+      "wrong": 5,
+      "contested": 0,
+      "unknown": 50,
+      "missing": 5,
+      "attribution_coverage": 0.725,
+      "conditional_accuracy": 0.9655172413793104,
+      "correct_fraction": 0.7,
+      "false_agent": 5,
+      "false_not_agent": 0,
+      "confusion": {
+        "agent->agent": 140,
+        "agent->missing": 5,
+        "agent->unknown": 15,
+        "human->agent": 5,
+        "human->unknown": 35
+      }
+    },
+    "plus_agent_script": {
+      "total_targets": 200,
+      "correct": 145,
+      "wrong": 5,
+      "contested": 0,
+      "unknown": 45,
+      "missing": 5,
+      "attribution_coverage": 0.75,
+      "conditional_accuracy": 0.9666666666666667,
+      "correct_fraction": 0.725,
+      "false_agent": 5,
+      "false_not_agent": 0,
+      "confusion": {
+        "agent->agent": 145,
+        "agent->missing": 5,
+        "agent->unknown": 10,
+        "human->agent": 5,
+        "human->unknown": 35
+      }
+    },
+    "plus_input_taint": {
+      "total_targets": 200,
+      "correct": 145,
+      "wrong": 0,
+      "contested": 5,
+      "unknown": 45,
+      "missing": 5,
+      "attribution_coverage": 0.725,
+      "conditional_accuracy": 1.0,
+      "correct_fraction": 0.725,
+      "false_agent": 0,
+      "false_not_agent": 0,
+      "confusion": {
+        "agent->agent": 145,
+        "agent->missing": 5,
+        "agent->unknown": 10,
+        "human->mixed": 5,
+        "human->unknown": 35
+      }
+    },
+    "full": {
+      "total_targets": 200,
+      "correct": 180,
+      "wrong": 5,
+      "contested": 10,
+      "unknown": 0,
+      "missing": 5,
+      "attribution_coverage": 0.925,
+      "conditional_accuracy": 0.972972972972973,
+      "correct_fraction": 0.9,
+      "false_agent": 0,
+      "false_not_agent": 5,
+      "confusion": {
+        "agent->agent": 145,
+        "agent->missing": 5,
+        "agent->mixed": 5,
+        "agent->not_agent": 5,
+        "human->mixed": 5,
+        "human->not_agent": 35
+      }
+    },
+    "full_without_input_taint": {
+      "total_targets": 200,
+      "correct": 180,
+      "wrong": 15,
+      "contested": 0,
+      "unknown": 0,
+      "missing": 5,
+      "attribution_coverage": 0.975,
+      "conditional_accuracy": 0.9230769230769231,
+      "correct_fraction": 0.9,
+      "false_agent": 5,
+      "false_not_agent": 10,
+      "confusion": {
+        "agent->agent": 145,
+        "agent->missing": 5,
+        "agent->not_agent": 10,
+        "human->agent": 5,
+        "human->not_agent": 35
+      }
+    },
+    "full_without_agent_script": {
+      "total_targets": 200,
+      "correct": 175,
+      "wrong": 10,
+      "contested": 10,
+      "unknown": 0,
+      "missing": 5,
+      "attribution_coverage": 0.925,
+      "conditional_accuracy": 0.9459459459459459,
+      "correct_fraction": 0.875,
+      "false_agent": 0,
+      "false_not_agent": 10,
+      "confusion": {
+        "agent->agent": 140,
+        "agent->missing": 5,
+        "agent->mixed": 5,
+        "agent->not_agent": 10,
+        "human->mixed": 5,
+        "human->not_agent": 35
+      }
+    },
+    "full_without_worker": {
+      "total_targets": 200,
+      "correct": 175,
+      "wrong": 5,
+      "contested": 10,
+      "unknown": 5,
+      "missing": 5,
+      "attribution_coverage": 0.9,
+      "conditional_accuracy": 0.9722222222222222,
+      "correct_fraction": 0.875,
+      "false_agent": 0,
+      "false_not_agent": 5,
+      "confusion": {
+        "agent->agent": 140,
+        "agent->missing": 5,
+        "agent->mixed": 5,
+        "agent->not_agent": 5,
+        "agent->unknown": 5,
+        "human->mixed": 5,
+        "human->not_agent": 35
+      }
+    },
+    "full_without_document_lineage": {
+      "total_targets": 200,
+      "correct": 130,
+      "wrong": 10,
+      "contested": 0,
+      "unknown": 55,
+      "missing": 5,
+      "attribution_coverage": 0.7,
+      "conditional_accuracy": 0.9285714285714286,
+      "correct_fraction": 0.65,
+      "false_agent": 0,
+      "false_not_agent": 10,
+      "confusion": {
+        "agent->agent": 105,
+        "agent->missing": 5,
+        "agent->not_agent": 10,
+        "agent->unknown": 40,
+        "human->not_agent": 25,
+        "human->unknown": 15
+      }
+    }
+  },
+  "by_group": {
+    "adversarial": {
+      "current_controller": {
+        "total_targets": 75,
+        "correct": 35,
+        "wrong": 35,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 5,
+        "attribution_coverage": 0.9333333333333333,
+        "conditional_accuracy": 0.5,
+        "correct_fraction": 0.4666666666666667,
+        "false_agent": 5,
+        "false_not_agent": 30,
+        "confusion": {
+          "agent->agent": 30,
+          "agent->human": 30,
+          "agent->missing": 5,
+          "human->agent": 5,
+          "human->human": 5
+        }
+      },
+      "v1_navigation_redirect": {
+        "total_targets": 75,
+        "correct": 30,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 40,
+        "missing": 5,
+        "attribution_coverage": 0.4,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 0.4,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 30,
+          "agent->missing": 5,
+          "agent->unknown": 30,
+          "human->unknown": 10
+        }
+      },
+      "plus_document_lineage": {
+        "total_targets": 75,
+        "correct": 60,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 10,
+        "missing": 5,
+        "attribution_coverage": 0.8,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 0.8,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 60,
+          "agent->missing": 5,
+          "human->unknown": 10
+        }
+      },
+      "plus_worker": {
+        "total_targets": 75,
+        "correct": 60,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 10,
+        "missing": 5,
+        "attribution_coverage": 0.8,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 0.8,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 60,
+          "agent->missing": 5,
+          "human->unknown": 10
+        }
+      },
+      "plus_agent_script": {
+        "total_targets": 75,
+        "correct": 60,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 10,
+        "missing": 5,
+        "attribution_coverage": 0.8,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 0.8,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 60,
+          "agent->missing": 5,
+          "human->unknown": 10
+        }
+      },
+      "plus_input_taint": {
+        "total_targets": 75,
+        "correct": 60,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 10,
+        "missing": 5,
+        "attribution_coverage": 0.8,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 0.8,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 60,
+          "agent->missing": 5,
+          "human->unknown": 10
+        }
+      },
+      "full": {
+        "total_targets": 75,
+        "correct": 70,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 5,
+        "attribution_coverage": 0.9333333333333333,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 0.9333333333333333,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 60,
+          "agent->missing": 5,
+          "human->not_agent": 10
+        }
+      },
+      "full_without_input_taint": {
+        "total_targets": 75,
+        "correct": 70,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 5,
+        "attribution_coverage": 0.9333333333333333,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 0.9333333333333333,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 60,
+          "agent->missing": 5,
+          "human->not_agent": 10
+        }
+      },
+      "full_without_agent_script": {
+        "total_targets": 75,
+        "correct": 70,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 5,
+        "attribution_coverage": 0.9333333333333333,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 0.9333333333333333,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 60,
+          "agent->missing": 5,
+          "human->not_agent": 10
+        }
+      },
+      "full_without_worker": {
+        "total_targets": 75,
+        "correct": 70,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 5,
+        "attribution_coverage": 0.9333333333333333,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 0.9333333333333333,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 60,
+          "agent->missing": 5,
+          "human->not_agent": 10
+        }
+      },
+      "full_without_document_lineage": {
+        "total_targets": 75,
+        "correct": 35,
+        "wrong": 5,
+        "contested": 0,
+        "unknown": 30,
+        "missing": 5,
+        "attribution_coverage": 0.5333333333333333,
+        "conditional_accuracy": 0.875,
+        "correct_fraction": 0.4666666666666667,
+        "false_agent": 0,
+        "false_not_agent": 5,
+        "confusion": {
+          "agent->agent": 30,
+          "agent->missing": 5,
+          "agent->not_agent": 5,
+          "agent->unknown": 25,
+          "human->not_agent": 5,
+          "human->unknown": 5
+        }
+      }
+    },
+    "mediated": {
+      "current_controller": {
+        "total_targets": 50,
+        "correct": 30,
+        "wrong": 20,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 0.6,
+        "correct_fraction": 0.6,
+        "false_agent": 0,
+        "false_not_agent": 20,
+        "confusion": {
+          "agent->agent": 15,
+          "agent->human": 20,
+          "human->human": 15
+        }
+      },
+      "v1_navigation_redirect": {
+        "total_targets": 50,
+        "correct": 15,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 35,
+        "missing": 0,
+        "attribution_coverage": 0.3,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 0.3,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 15,
+          "agent->unknown": 20,
+          "human->unknown": 15
+        }
+      },
+      "plus_document_lineage": {
+        "total_targets": 50,
+        "correct": 25,
+        "wrong": 5,
+        "contested": 0,
+        "unknown": 20,
+        "missing": 0,
+        "attribution_coverage": 0.6,
+        "conditional_accuracy": 0.8333333333333334,
+        "correct_fraction": 0.5,
+        "false_agent": 5,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 25,
+          "agent->unknown": 10,
+          "human->agent": 5,
+          "human->unknown": 10
+        }
+      },
+      "plus_worker": {
+        "total_targets": 50,
+        "correct": 25,
+        "wrong": 5,
+        "contested": 0,
+        "unknown": 20,
+        "missing": 0,
+        "attribution_coverage": 0.6,
+        "conditional_accuracy": 0.8333333333333334,
+        "correct_fraction": 0.5,
+        "false_agent": 5,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 25,
+          "agent->unknown": 10,
+          "human->agent": 5,
+          "human->unknown": 10
+        }
+      },
+      "plus_agent_script": {
+        "total_targets": 50,
+        "correct": 30,
+        "wrong": 5,
+        "contested": 0,
+        "unknown": 15,
+        "missing": 0,
+        "attribution_coverage": 0.7,
+        "conditional_accuracy": 0.8571428571428571,
+        "correct_fraction": 0.6,
+        "false_agent": 5,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 30,
+          "agent->unknown": 5,
+          "human->agent": 5,
+          "human->unknown": 10
+        }
+      },
+      "plus_input_taint": {
+        "total_targets": 50,
+        "correct": 30,
+        "wrong": 0,
+        "contested": 5,
+        "unknown": 15,
+        "missing": 0,
+        "attribution_coverage": 0.6,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 0.6,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 30,
+          "agent->unknown": 5,
+          "human->mixed": 5,
+          "human->unknown": 10
+        }
+      },
+      "full": {
+        "total_targets": 50,
+        "correct": 40,
+        "wrong": 0,
+        "contested": 10,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 0.8,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 0.8,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 30,
+          "agent->mixed": 5,
+          "human->mixed": 5,
+          "human->not_agent": 10
+        }
+      },
+      "full_without_input_taint": {
+        "total_targets": 50,
+        "correct": 40,
+        "wrong": 10,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 0.8,
+        "correct_fraction": 0.8,
+        "false_agent": 5,
+        "false_not_agent": 5,
+        "confusion": {
+          "agent->agent": 30,
+          "agent->not_agent": 5,
+          "human->agent": 5,
+          "human->not_agent": 10
+        }
+      },
+      "full_without_agent_script": {
+        "total_targets": 50,
+        "correct": 35,
+        "wrong": 5,
+        "contested": 10,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 0.8,
+        "conditional_accuracy": 0.875,
+        "correct_fraction": 0.7,
+        "false_agent": 0,
+        "false_not_agent": 5,
+        "confusion": {
+          "agent->agent": 25,
+          "agent->mixed": 5,
+          "agent->not_agent": 5,
+          "human->mixed": 5,
+          "human->not_agent": 10
+        }
+      },
+      "full_without_worker": {
+        "total_targets": 50,
+        "correct": 40,
+        "wrong": 0,
+        "contested": 10,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 0.8,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 0.8,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 30,
+          "agent->mixed": 5,
+          "human->mixed": 5,
+          "human->not_agent": 10
+        }
+      },
+      "full_without_document_lineage": {
+        "total_targets": 50,
+        "correct": 35,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 15,
+        "missing": 0,
+        "attribution_coverage": 0.7,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 0.7,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 25,
+          "agent->unknown": 10,
+          "human->not_agent": 10,
+          "human->unknown": 5
+        }
+      }
+    },
+    "v1": {
+      "current_controller": {
+        "total_targets": 75,
+        "correct": 50,
+        "wrong": 25,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 0.6666666666666666,
+        "correct_fraction": 0.6666666666666666,
+        "false_agent": 5,
+        "false_not_agent": 20,
+        "confusion": {
+          "agent->agent": 40,
+          "agent->human": 20,
+          "human->agent": 5,
+          "human->human": 10
+        }
+      },
+      "v1_navigation_redirect": {
+        "total_targets": 75,
+        "correct": 45,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 30,
+        "missing": 0,
+        "attribution_coverage": 0.6,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 0.6,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 45,
+          "agent->unknown": 15,
+          "human->unknown": 15
+        }
+      },
+      "plus_document_lineage": {
+        "total_targets": 75,
+        "correct": 50,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 25,
+        "missing": 0,
+        "attribution_coverage": 0.6666666666666666,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 0.6666666666666666,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 50,
+          "agent->unknown": 10,
+          "human->unknown": 15
+        }
+      },
+      "plus_worker": {
+        "total_targets": 75,
+        "correct": 55,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 20,
+        "missing": 0,
+        "attribution_coverage": 0.7333333333333333,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 0.7333333333333333,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 55,
+          "agent->unknown": 5,
+          "human->unknown": 15
+        }
+      },
+      "plus_agent_script": {
+        "total_targets": 75,
+        "correct": 55,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 20,
+        "missing": 0,
+        "attribution_coverage": 0.7333333333333333,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 0.7333333333333333,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 55,
+          "agent->unknown": 5,
+          "human->unknown": 15
+        }
+      },
+      "plus_input_taint": {
+        "total_targets": 75,
+        "correct": 55,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 20,
+        "missing": 0,
+        "attribution_coverage": 0.7333333333333333,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 0.7333333333333333,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 55,
+          "agent->unknown": 5,
+          "human->unknown": 15
+        }
+      },
+      "full": {
+        "total_targets": 75,
+        "correct": 70,
+        "wrong": 5,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 0.9333333333333333,
+        "correct_fraction": 0.9333333333333333,
+        "false_agent": 0,
+        "false_not_agent": 5,
+        "confusion": {
+          "agent->agent": 55,
+          "agent->not_agent": 5,
+          "human->not_agent": 15
+        }
+      },
+      "full_without_input_taint": {
+        "total_targets": 75,
+        "correct": 70,
+        "wrong": 5,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 0.9333333333333333,
+        "correct_fraction": 0.9333333333333333,
+        "false_agent": 0,
+        "false_not_agent": 5,
+        "confusion": {
+          "agent->agent": 55,
+          "agent->not_agent": 5,
+          "human->not_agent": 15
+        }
+      },
+      "full_without_agent_script": {
+        "total_targets": 75,
+        "correct": 70,
+        "wrong": 5,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 0.9333333333333333,
+        "correct_fraction": 0.9333333333333333,
+        "false_agent": 0,
+        "false_not_agent": 5,
+        "confusion": {
+          "agent->agent": 55,
+          "agent->not_agent": 5,
+          "human->not_agent": 15
+        }
+      },
+      "full_without_worker": {
+        "total_targets": 75,
+        "correct": 65,
+        "wrong": 5,
+        "contested": 0,
+        "unknown": 5,
+        "missing": 0,
+        "attribution_coverage": 0.9333333333333333,
+        "conditional_accuracy": 0.9285714285714286,
+        "correct_fraction": 0.8666666666666667,
+        "false_agent": 0,
+        "false_not_agent": 5,
+        "confusion": {
+          "agent->agent": 50,
+          "agent->not_agent": 5,
+          "agent->unknown": 5,
+          "human->not_agent": 15
+        }
+      },
+      "full_without_document_lineage": {
+        "total_targets": 75,
+        "correct": 60,
+        "wrong": 5,
+        "contested": 0,
+        "unknown": 10,
+        "missing": 0,
+        "attribution_coverage": 0.8666666666666667,
+        "conditional_accuracy": 0.9230769230769231,
+        "correct_fraction": 0.8,
+        "false_agent": 0,
+        "false_not_agent": 5,
+        "confusion": {
+          "agent->agent": 50,
+          "agent->not_agent": 5,
+          "agent->unknown": 5,
+          "human->not_agent": 10,
+          "human->unknown": 5
+        }
+      }
+    }
+  },
+  "by_scenario": {
+    "agent_direct": {
+      "current_controller": {
+        "total_targets": 5,
+        "correct": 5,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 5
+        }
+      },
+      "v1_navigation_redirect": {
+        "total_targets": 5,
+        "correct": 5,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 5
+        }
+      },
+      "plus_document_lineage": {
+        "total_targets": 5,
+        "correct": 5,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 5
+        }
+      },
+      "plus_worker": {
+        "total_targets": 5,
+        "correct": 5,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 5
+        }
+      },
+      "plus_agent_script": {
+        "total_targets": 5,
+        "correct": 5,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 5
+        }
+      },
+      "plus_input_taint": {
+        "total_targets": 5,
+        "correct": 5,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 5
+        }
+      },
+      "full": {
+        "total_targets": 5,
+        "correct": 5,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 5
+        }
+      },
+      "full_without_input_taint": {
+        "total_targets": 5,
+        "correct": 5,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 5
+        }
+      },
+      "full_without_agent_script": {
+        "total_targets": 5,
+        "correct": 5,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 5
+        }
+      },
+      "full_without_worker": {
+        "total_targets": 5,
+        "correct": 5,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 5
+        }
+      },
+      "full_without_document_lineage": {
+        "total_targets": 5,
+        "correct": 5,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 5
+        }
+      }
+    },
+    "agent_redirect_stable": {
+      "current_controller": {
+        "total_targets": 15,
+        "correct": 15,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 15
+        }
+      },
+      "v1_navigation_redirect": {
+        "total_targets": 15,
+        "correct": 15,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 15
+        }
+      },
+      "plus_document_lineage": {
+        "total_targets": 15,
+        "correct": 15,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 15
+        }
+      },
+      "plus_worker": {
+        "total_targets": 15,
+        "correct": 15,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 15
+        }
+      },
+      "plus_agent_script": {
+        "total_targets": 15,
+        "correct": 15,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 15
+        }
+      },
+      "plus_input_taint": {
+        "total_targets": 15,
+        "correct": 15,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 15
+        }
+      },
+      "full": {
+        "total_targets": 15,
+        "correct": 15,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 15
+        }
+      },
+      "full_without_input_taint": {
+        "total_targets": 15,
+        "correct": 15,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 15
+        }
+      },
+      "full_without_agent_script": {
+        "total_targets": 15,
+        "correct": 15,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 15
+        }
+      },
+      "full_without_worker": {
+        "total_targets": 15,
+        "correct": 15,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 15
+        }
+      },
+      "full_without_document_lineage": {
+        "total_targets": 15,
+        "correct": 15,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 15
+        }
+      }
+    },
+    "agent_redirect_handoff": {
+      "current_controller": {
+        "total_targets": 15,
+        "correct": 5,
+        "wrong": 10,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 0.3333333333333333,
+        "correct_fraction": 0.3333333333333333,
+        "false_agent": 0,
+        "false_not_agent": 10,
+        "confusion": {
+          "agent->agent": 5,
+          "agent->human": 10
+        }
+      },
+      "v1_navigation_redirect": {
+        "total_targets": 15,
+        "correct": 15,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 15
+        }
+      },
+      "plus_document_lineage": {
+        "total_targets": 15,
+        "correct": 15,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 15
+        }
+      },
+      "plus_worker": {
+        "total_targets": 15,
+        "correct": 15,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 15
+        }
+      },
+      "plus_agent_script": {
+        "total_targets": 15,
+        "correct": 15,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 15
+        }
+      },
+      "plus_input_taint": {
+        "total_targets": 15,
+        "correct": 15,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 15
+        }
+      },
+      "full": {
+        "total_targets": 15,
+        "correct": 15,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 15
+        }
+      },
+      "full_without_input_taint": {
+        "total_targets": 15,
+        "correct": 15,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 15
+        }
+      },
+      "full_without_agent_script": {
+        "total_targets": 15,
+        "correct": 15,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 15
+        }
+      },
+      "full_without_worker": {
+        "total_targets": 15,
+        "correct": 15,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 15
+        }
+      },
+      "full_without_document_lineage": {
+        "total_targets": 15,
+        "correct": 15,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 15
+        }
+      }
+    },
+    "agent_callback_handoff": {
+      "current_controller": {
+        "total_targets": 10,
+        "correct": 5,
+        "wrong": 5,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 0.5,
+        "correct_fraction": 0.5,
+        "false_agent": 0,
+        "false_not_agent": 5,
+        "confusion": {
+          "agent->agent": 5,
+          "agent->human": 5
+        }
+      },
+      "v1_navigation_redirect": {
+        "total_targets": 10,
+        "correct": 5,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 5,
+        "missing": 0,
+        "attribution_coverage": 0.5,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 0.5,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 5,
+          "agent->unknown": 5
+        }
+      },
+      "plus_document_lineage": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 10
+        }
+      },
+      "plus_worker": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 10
+        }
+      },
+      "plus_agent_script": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 10
+        }
+      },
+      "plus_input_taint": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 10
+        }
+      },
+      "full": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 10
+        }
+      },
+      "full_without_input_taint": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 10
+        }
+      },
+      "full_without_agent_script": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 10
+        }
+      },
+      "full_without_worker": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 10
+        }
+      },
+      "full_without_document_lineage": {
+        "total_targets": 10,
+        "correct": 5,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 5,
+        "missing": 0,
+        "attribution_coverage": 0.5,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 0.5,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 5,
+          "agent->unknown": 5
+        }
+      }
+    },
+    "unbound_agent_direct": {
+      "current_controller": {
+        "total_targets": 5,
+        "correct": 5,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 5
+        }
+      },
+      "v1_navigation_redirect": {
+        "total_targets": 5,
+        "correct": 0,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 5,
+        "missing": 0,
+        "attribution_coverage": 0.0,
+        "conditional_accuracy": null,
+        "correct_fraction": 0.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->unknown": 5
+        }
+      },
+      "plus_document_lineage": {
+        "total_targets": 5,
+        "correct": 0,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 5,
+        "missing": 0,
+        "attribution_coverage": 0.0,
+        "conditional_accuracy": null,
+        "correct_fraction": 0.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->unknown": 5
+        }
+      },
+      "plus_worker": {
+        "total_targets": 5,
+        "correct": 0,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 5,
+        "missing": 0,
+        "attribution_coverage": 0.0,
+        "conditional_accuracy": null,
+        "correct_fraction": 0.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->unknown": 5
+        }
+      },
+      "plus_agent_script": {
+        "total_targets": 5,
+        "correct": 0,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 5,
+        "missing": 0,
+        "attribution_coverage": 0.0,
+        "conditional_accuracy": null,
+        "correct_fraction": 0.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->unknown": 5
+        }
+      },
+      "plus_input_taint": {
+        "total_targets": 5,
+        "correct": 0,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 5,
+        "missing": 0,
+        "attribution_coverage": 0.0,
+        "conditional_accuracy": null,
+        "correct_fraction": 0.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->unknown": 5
+        }
+      },
+      "full": {
+        "total_targets": 5,
+        "correct": 0,
+        "wrong": 5,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 0.0,
+        "correct_fraction": 0.0,
+        "false_agent": 0,
+        "false_not_agent": 5,
+        "confusion": {
+          "agent->not_agent": 5
+        }
+      },
+      "full_without_input_taint": {
+        "total_targets": 5,
+        "correct": 0,
+        "wrong": 5,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 0.0,
+        "correct_fraction": 0.0,
+        "false_agent": 0,
+        "false_not_agent": 5,
+        "confusion": {
+          "agent->not_agent": 5
+        }
+      },
+      "full_without_agent_script": {
+        "total_targets": 5,
+        "correct": 0,
+        "wrong": 5,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 0.0,
+        "correct_fraction": 0.0,
+        "false_agent": 0,
+        "false_not_agent": 5,
+        "confusion": {
+          "agent->not_agent": 5
+        }
+      },
+      "full_without_worker": {
+        "total_targets": 5,
+        "correct": 0,
+        "wrong": 5,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 0.0,
+        "correct_fraction": 0.0,
+        "false_agent": 0,
+        "false_not_agent": 5,
+        "confusion": {
+          "agent->not_agent": 5
+        }
+      },
+      "full_without_document_lineage": {
+        "total_targets": 5,
+        "correct": 0,
+        "wrong": 5,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 0.0,
+        "correct_fraction": 0.0,
+        "false_agent": 0,
+        "false_not_agent": 5,
+        "confusion": {
+          "agent->not_agent": 5
+        }
+      }
+    },
+    "simulated_human_direct": {
+      "current_controller": {
+        "total_targets": 5,
+        "correct": 5,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "human->human": 5
+        }
+      },
+      "v1_navigation_redirect": {
+        "total_targets": 5,
+        "correct": 0,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 5,
+        "missing": 0,
+        "attribution_coverage": 0.0,
+        "conditional_accuracy": null,
+        "correct_fraction": 0.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "human->unknown": 5
+        }
+      },
+      "plus_document_lineage": {
+        "total_targets": 5,
+        "correct": 0,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 5,
+        "missing": 0,
+        "attribution_coverage": 0.0,
+        "conditional_accuracy": null,
+        "correct_fraction": 0.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "human->unknown": 5
+        }
+      },
+      "plus_worker": {
+        "total_targets": 5,
+        "correct": 0,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 5,
+        "missing": 0,
+        "attribution_coverage": 0.0,
+        "conditional_accuracy": null,
+        "correct_fraction": 0.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "human->unknown": 5
+        }
+      },
+      "plus_agent_script": {
+        "total_targets": 5,
+        "correct": 0,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 5,
+        "missing": 0,
+        "attribution_coverage": 0.0,
+        "conditional_accuracy": null,
+        "correct_fraction": 0.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "human->unknown": 5
+        }
+      },
+      "plus_input_taint": {
+        "total_targets": 5,
+        "correct": 0,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 5,
+        "missing": 0,
+        "attribution_coverage": 0.0,
+        "conditional_accuracy": null,
+        "correct_fraction": 0.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "human->unknown": 5
+        }
+      },
+      "full": {
+        "total_targets": 5,
+        "correct": 5,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "human->not_agent": 5
+        }
+      },
+      "full_without_input_taint": {
+        "total_targets": 5,
+        "correct": 5,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "human->not_agent": 5
+        }
+      },
+      "full_without_agent_script": {
+        "total_targets": 5,
+        "correct": 5,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "human->not_agent": 5
+        }
+      },
+      "full_without_worker": {
+        "total_targets": 5,
+        "correct": 5,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "human->not_agent": 5
+        }
+      },
+      "full_without_document_lineage": {
+        "total_targets": 5,
+        "correct": 5,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "human->not_agent": 5
+        }
+      }
+    },
+    "simulated_human_callback_handoff": {
+      "current_controller": {
+        "total_targets": 10,
+        "correct": 5,
+        "wrong": 5,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 0.5,
+        "correct_fraction": 0.5,
+        "false_agent": 5,
+        "false_not_agent": 0,
+        "confusion": {
+          "human->agent": 5,
+          "human->human": 5
+        }
+      },
+      "v1_navigation_redirect": {
+        "total_targets": 10,
+        "correct": 0,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 10,
+        "missing": 0,
+        "attribution_coverage": 0.0,
+        "conditional_accuracy": null,
+        "correct_fraction": 0.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "human->unknown": 10
+        }
+      },
+      "plus_document_lineage": {
+        "total_targets": 10,
+        "correct": 0,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 10,
+        "missing": 0,
+        "attribution_coverage": 0.0,
+        "conditional_accuracy": null,
+        "correct_fraction": 0.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "human->unknown": 10
+        }
+      },
+      "plus_worker": {
+        "total_targets": 10,
+        "correct": 0,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 10,
+        "missing": 0,
+        "attribution_coverage": 0.0,
+        "conditional_accuracy": null,
+        "correct_fraction": 0.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "human->unknown": 10
+        }
+      },
+      "plus_agent_script": {
+        "total_targets": 10,
+        "correct": 0,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 10,
+        "missing": 0,
+        "attribution_coverage": 0.0,
+        "conditional_accuracy": null,
+        "correct_fraction": 0.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "human->unknown": 10
+        }
+      },
+      "plus_input_taint": {
+        "total_targets": 10,
+        "correct": 0,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 10,
+        "missing": 0,
+        "attribution_coverage": 0.0,
+        "conditional_accuracy": null,
+        "correct_fraction": 0.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "human->unknown": 10
+        }
+      },
+      "full": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "human->not_agent": 10
+        }
+      },
+      "full_without_input_taint": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "human->not_agent": 10
+        }
+      },
+      "full_without_agent_script": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "human->not_agent": 10
+        }
+      },
+      "full_without_worker": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "human->not_agent": 10
+        }
+      },
+      "full_without_document_lineage": {
+        "total_targets": 10,
+        "correct": 5,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 5,
+        "missing": 0,
+        "attribution_coverage": 0.5,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 0.5,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "human->not_agent": 5,
+          "human->unknown": 5
+        }
+      }
+    },
+    "agent_worker_handoff": {
+      "current_controller": {
+        "total_targets": 10,
+        "correct": 5,
+        "wrong": 5,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 0.5,
+        "correct_fraction": 0.5,
+        "false_agent": 0,
+        "false_not_agent": 5,
+        "confusion": {
+          "agent->agent": 5,
+          "agent->human": 5
+        }
+      },
+      "v1_navigation_redirect": {
+        "total_targets": 10,
+        "correct": 5,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 5,
+        "missing": 0,
+        "attribution_coverage": 0.5,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 0.5,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 5,
+          "agent->unknown": 5
+        }
+      },
+      "plus_document_lineage": {
+        "total_targets": 10,
+        "correct": 5,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 5,
+        "missing": 0,
+        "attribution_coverage": 0.5,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 0.5,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 5,
+          "agent->unknown": 5
+        }
+      },
+      "plus_worker": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 10
+        }
+      },
+      "plus_agent_script": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 10
+        }
+      },
+      "plus_input_taint": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 10
+        }
+      },
+      "full": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 10
+        }
+      },
+      "full_without_input_taint": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 10
+        }
+      },
+      "full_without_agent_script": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 10
+        }
+      },
+      "full_without_worker": {
+        "total_targets": 10,
+        "correct": 5,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 5,
+        "missing": 0,
+        "attribution_coverage": 0.5,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 0.5,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 5,
+          "agent->unknown": 5
+        }
+      },
+      "full_without_document_lineage": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 10
+        }
+      }
+    },
+    "agent_script_callback_handoff": {
+      "current_controller": {
+        "total_targets": 10,
+        "correct": 5,
+        "wrong": 5,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 0.5,
+        "correct_fraction": 0.5,
+        "false_agent": 0,
+        "false_not_agent": 5,
+        "confusion": {
+          "agent->agent": 5,
+          "agent->human": 5
+        }
+      },
+      "v1_navigation_redirect": {
+        "total_targets": 10,
+        "correct": 5,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 5,
+        "missing": 0,
+        "attribution_coverage": 0.5,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 0.5,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 5,
+          "agent->unknown": 5
+        }
+      },
+      "plus_document_lineage": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 10
+        }
+      },
+      "plus_worker": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 10
+        }
+      },
+      "plus_agent_script": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 10
+        }
+      },
+      "plus_input_taint": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 10
+        }
+      },
+      "full": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 10
+        }
+      },
+      "full_without_input_taint": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 10
+        }
+      },
+      "full_without_agent_script": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 10
+        }
+      },
+      "full_without_worker": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 10
+        }
+      },
+      "full_without_document_lineage": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 10
+        }
+      }
+    },
+    "agent_click_callback_handoff": {
+      "current_controller": {
+        "total_targets": 10,
+        "correct": 5,
+        "wrong": 5,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 0.5,
+        "correct_fraction": 0.5,
+        "false_agent": 0,
+        "false_not_agent": 5,
+        "confusion": {
+          "agent->agent": 5,
+          "agent->human": 5
+        }
+      },
+      "v1_navigation_redirect": {
+        "total_targets": 10,
+        "correct": 5,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 5,
+        "missing": 0,
+        "attribution_coverage": 0.5,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 0.5,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 5,
+          "agent->unknown": 5
+        }
+      },
+      "plus_document_lineage": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 10
+        }
+      },
+      "plus_worker": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 10
+        }
+      },
+      "plus_agent_script": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 10
+        }
+      },
+      "plus_input_taint": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 10
+        }
+      },
+      "full": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 10
+        }
+      },
+      "full_without_input_taint": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 10
+        }
+      },
+      "full_without_agent_script": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 10
+        }
+      },
+      "full_without_worker": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 10
+        }
+      },
+      "full_without_document_lineage": {
+        "total_targets": 10,
+        "correct": 5,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 5,
+        "missing": 0,
+        "attribution_coverage": 0.5,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 0.5,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 5,
+          "agent->unknown": 5
+        }
+      }
+    },
+    "human_click_on_agent_page": {
+      "current_controller": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 5,
+          "human->human": 5
+        }
+      },
+      "v1_navigation_redirect": {
+        "total_targets": 10,
+        "correct": 5,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 5,
+        "missing": 0,
+        "attribution_coverage": 0.5,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 0.5,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 5,
+          "human->unknown": 5
+        }
+      },
+      "plus_document_lineage": {
+        "total_targets": 10,
+        "correct": 5,
+        "wrong": 5,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 0.5,
+        "correct_fraction": 0.5,
+        "false_agent": 5,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 5,
+          "human->agent": 5
+        }
+      },
+      "plus_worker": {
+        "total_targets": 10,
+        "correct": 5,
+        "wrong": 5,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 0.5,
+        "correct_fraction": 0.5,
+        "false_agent": 5,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 5,
+          "human->agent": 5
+        }
+      },
+      "plus_agent_script": {
+        "total_targets": 10,
+        "correct": 5,
+        "wrong": 5,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 0.5,
+        "correct_fraction": 0.5,
+        "false_agent": 5,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 5,
+          "human->agent": 5
+        }
+      },
+      "plus_input_taint": {
+        "total_targets": 10,
+        "correct": 5,
+        "wrong": 0,
+        "contested": 5,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 0.5,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 0.5,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 5,
+          "human->mixed": 5
+        }
+      },
+      "full": {
+        "total_targets": 10,
+        "correct": 5,
+        "wrong": 0,
+        "contested": 5,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 0.5,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 0.5,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 5,
+          "human->mixed": 5
+        }
+      },
+      "full_without_input_taint": {
+        "total_targets": 10,
+        "correct": 5,
+        "wrong": 5,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 0.5,
+        "correct_fraction": 0.5,
+        "false_agent": 5,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 5,
+          "human->agent": 5
+        }
+      },
+      "full_without_agent_script": {
+        "total_targets": 10,
+        "correct": 5,
+        "wrong": 0,
+        "contested": 5,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 0.5,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 0.5,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 5,
+          "human->mixed": 5
+        }
+      },
+      "full_without_worker": {
+        "total_targets": 10,
+        "correct": 5,
+        "wrong": 0,
+        "contested": 5,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 0.5,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 0.5,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 5,
+          "human->mixed": 5
+        }
+      },
+      "full_without_document_lineage": {
+        "total_targets": 10,
+        "correct": 5,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 5,
+        "missing": 0,
+        "attribution_coverage": 0.5,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 0.5,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 5,
+          "human->unknown": 5
+        }
+      }
+    },
+    "agent_script_on_human_page": {
+      "current_controller": {
+        "total_targets": 10,
+        "correct": 5,
+        "wrong": 5,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 0.5,
+        "correct_fraction": 0.5,
+        "false_agent": 0,
+        "false_not_agent": 5,
+        "confusion": {
+          "agent->human": 5,
+          "human->human": 5
+        }
+      },
+      "v1_navigation_redirect": {
+        "total_targets": 10,
+        "correct": 0,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 10,
+        "missing": 0,
+        "attribution_coverage": 0.0,
+        "conditional_accuracy": null,
+        "correct_fraction": 0.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->unknown": 5,
+          "human->unknown": 5
+        }
+      },
+      "plus_document_lineage": {
+        "total_targets": 10,
+        "correct": 0,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 10,
+        "missing": 0,
+        "attribution_coverage": 0.0,
+        "conditional_accuracy": null,
+        "correct_fraction": 0.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->unknown": 5,
+          "human->unknown": 5
+        }
+      },
+      "plus_worker": {
+        "total_targets": 10,
+        "correct": 0,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 10,
+        "missing": 0,
+        "attribution_coverage": 0.0,
+        "conditional_accuracy": null,
+        "correct_fraction": 0.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->unknown": 5,
+          "human->unknown": 5
+        }
+      },
+      "plus_agent_script": {
+        "total_targets": 10,
+        "correct": 5,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 5,
+        "missing": 0,
+        "attribution_coverage": 0.5,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 0.5,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 5,
+          "human->unknown": 5
+        }
+      },
+      "plus_input_taint": {
+        "total_targets": 10,
+        "correct": 5,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 5,
+        "missing": 0,
+        "attribution_coverage": 0.5,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 0.5,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 5,
+          "human->unknown": 5
+        }
+      },
+      "full": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 5,
+          "human->not_agent": 5
+        }
+      },
+      "full_without_input_taint": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 5,
+          "human->not_agent": 5
+        }
+      },
+      "full_without_agent_script": {
+        "total_targets": 10,
+        "correct": 5,
+        "wrong": 5,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 0.5,
+        "correct_fraction": 0.5,
+        "false_agent": 0,
+        "false_not_agent": 5,
+        "confusion": {
+          "agent->not_agent": 5,
+          "human->not_agent": 5
+        }
+      },
+      "full_without_worker": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 5,
+          "human->not_agent": 5
+        }
+      },
+      "full_without_document_lineage": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 5,
+          "human->not_agent": 5
+        }
+      }
+    },
+    "agent_click_on_human_page": {
+      "current_controller": {
+        "total_targets": 10,
+        "correct": 5,
+        "wrong": 5,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 0.5,
+        "correct_fraction": 0.5,
+        "false_agent": 0,
+        "false_not_agent": 5,
+        "confusion": {
+          "agent->human": 5,
+          "human->human": 5
+        }
+      },
+      "v1_navigation_redirect": {
+        "total_targets": 10,
+        "correct": 0,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 10,
+        "missing": 0,
+        "attribution_coverage": 0.0,
+        "conditional_accuracy": null,
+        "correct_fraction": 0.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->unknown": 5,
+          "human->unknown": 5
+        }
+      },
+      "plus_document_lineage": {
+        "total_targets": 10,
+        "correct": 0,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 10,
+        "missing": 0,
+        "attribution_coverage": 0.0,
+        "conditional_accuracy": null,
+        "correct_fraction": 0.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->unknown": 5,
+          "human->unknown": 5
+        }
+      },
+      "plus_worker": {
+        "total_targets": 10,
+        "correct": 0,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 10,
+        "missing": 0,
+        "attribution_coverage": 0.0,
+        "conditional_accuracy": null,
+        "correct_fraction": 0.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->unknown": 5,
+          "human->unknown": 5
+        }
+      },
+      "plus_agent_script": {
+        "total_targets": 10,
+        "correct": 0,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 10,
+        "missing": 0,
+        "attribution_coverage": 0.0,
+        "conditional_accuracy": null,
+        "correct_fraction": 0.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->unknown": 5,
+          "human->unknown": 5
+        }
+      },
+      "plus_input_taint": {
+        "total_targets": 10,
+        "correct": 0,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 10,
+        "missing": 0,
+        "attribution_coverage": 0.0,
+        "conditional_accuracy": null,
+        "correct_fraction": 0.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->unknown": 5,
+          "human->unknown": 5
+        }
+      },
+      "full": {
+        "total_targets": 10,
+        "correct": 5,
+        "wrong": 0,
+        "contested": 5,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 0.5,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 0.5,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->mixed": 5,
+          "human->not_agent": 5
+        }
+      },
+      "full_without_input_taint": {
+        "total_targets": 10,
+        "correct": 5,
+        "wrong": 5,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 0.5,
+        "correct_fraction": 0.5,
+        "false_agent": 0,
+        "false_not_agent": 5,
+        "confusion": {
+          "agent->not_agent": 5,
+          "human->not_agent": 5
+        }
+      },
+      "full_without_agent_script": {
+        "total_targets": 10,
+        "correct": 5,
+        "wrong": 0,
+        "contested": 5,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 0.5,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 0.5,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->mixed": 5,
+          "human->not_agent": 5
+        }
+      },
+      "full_without_worker": {
+        "total_targets": 10,
+        "correct": 5,
+        "wrong": 0,
+        "contested": 5,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 0.5,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 0.5,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->mixed": 5,
+          "human->not_agent": 5
+        }
+      },
+      "full_without_document_lineage": {
+        "total_targets": 10,
+        "correct": 5,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 5,
+        "missing": 0,
+        "attribution_coverage": 0.5,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 0.5,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->unknown": 5,
+          "human->not_agent": 5
+        }
+      }
+    },
+    "adv_meta_refresh_handoff": {
+      "current_controller": {
+        "total_targets": 10,
+        "correct": 5,
+        "wrong": 5,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 0.5,
+        "correct_fraction": 0.5,
+        "false_agent": 0,
+        "false_not_agent": 5,
+        "confusion": {
+          "agent->agent": 5,
+          "agent->human": 5
+        }
+      },
+      "v1_navigation_redirect": {
+        "total_targets": 10,
+        "correct": 5,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 5,
+        "missing": 0,
+        "attribution_coverage": 0.5,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 0.5,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 5,
+          "agent->unknown": 5
+        }
+      },
+      "plus_document_lineage": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 10
+        }
+      },
+      "plus_worker": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 10
+        }
+      },
+      "plus_agent_script": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 10
+        }
+      },
+      "plus_input_taint": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 10
+        }
+      },
+      "full": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 10
+        }
+      },
+      "full_without_input_taint": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 10
+        }
+      },
+      "full_without_agent_script": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 10
+        }
+      },
+      "full_without_worker": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 10
+        }
+      },
+      "full_without_document_lineage": {
+        "total_targets": 10,
+        "correct": 5,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 5,
+        "missing": 0,
+        "attribution_coverage": 0.5,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 0.5,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 5,
+          "agent->unknown": 5
+        }
+      }
+    },
+    "adv_script_navigation_handoff": {
+      "current_controller": {
+        "total_targets": 10,
+        "correct": 5,
+        "wrong": 5,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 0.5,
+        "correct_fraction": 0.5,
+        "false_agent": 0,
+        "false_not_agent": 5,
+        "confusion": {
+          "agent->agent": 5,
+          "agent->human": 5
+        }
+      },
+      "v1_navigation_redirect": {
+        "total_targets": 10,
+        "correct": 5,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 5,
+        "missing": 0,
+        "attribution_coverage": 0.5,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 0.5,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 5,
+          "agent->unknown": 5
+        }
+      },
+      "plus_document_lineage": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 10
+        }
+      },
+      "plus_worker": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 10
+        }
+      },
+      "plus_agent_script": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 10
+        }
+      },
+      "plus_input_taint": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 10
+        }
+      },
+      "full": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 10
+        }
+      },
+      "full_without_input_taint": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 10
+        }
+      },
+      "full_without_agent_script": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 10
+        }
+      },
+      "full_without_worker": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 10
+        }
+      },
+      "full_without_document_lineage": {
+        "total_targets": 10,
+        "correct": 5,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 5,
+        "missing": 0,
+        "attribution_coverage": 0.5,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 0.5,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 5,
+          "agent->unknown": 5
+        }
+      }
+    },
+    "adv_form_autosubmit_handoff": {
+      "current_controller": {
+        "total_targets": 10,
+        "correct": 5,
+        "wrong": 5,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 0.5,
+        "correct_fraction": 0.5,
+        "false_agent": 0,
+        "false_not_agent": 5,
+        "confusion": {
+          "agent->agent": 5,
+          "agent->human": 5
+        }
+      },
+      "v1_navigation_redirect": {
+        "total_targets": 10,
+        "correct": 5,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 5,
+        "missing": 0,
+        "attribution_coverage": 0.5,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 0.5,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 5,
+          "agent->unknown": 5
+        }
+      },
+      "plus_document_lineage": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 10
+        }
+      },
+      "plus_worker": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 10
+        }
+      },
+      "plus_agent_script": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 10
+        }
+      },
+      "plus_input_taint": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 10
+        }
+      },
+      "full": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 10
+        }
+      },
+      "full_without_input_taint": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 10
+        }
+      },
+      "full_without_agent_script": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 10
+        }
+      },
+      "full_without_worker": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 10
+        }
+      },
+      "full_without_document_lineage": {
+        "total_targets": 10,
+        "correct": 5,
+        "wrong": 5,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 0.5,
+        "correct_fraction": 0.5,
+        "false_agent": 0,
+        "false_not_agent": 5,
+        "confusion": {
+          "agent->agent": 5,
+          "agent->not_agent": 5
+        }
+      }
+    },
+    "adv_popup_handoff": {
+      "current_controller": {
+        "total_targets": 10,
+        "correct": 5,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 5,
+        "attribution_coverage": 0.5,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 0.5,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 5,
+          "agent->missing": 5
+        }
+      },
+      "v1_navigation_redirect": {
+        "total_targets": 10,
+        "correct": 5,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 5,
+        "attribution_coverage": 0.5,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 0.5,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 5,
+          "agent->missing": 5
+        }
+      },
+      "plus_document_lineage": {
+        "total_targets": 10,
+        "correct": 5,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 5,
+        "attribution_coverage": 0.5,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 0.5,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 5,
+          "agent->missing": 5
+        }
+      },
+      "plus_worker": {
+        "total_targets": 10,
+        "correct": 5,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 5,
+        "attribution_coverage": 0.5,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 0.5,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 5,
+          "agent->missing": 5
+        }
+      },
+      "plus_agent_script": {
+        "total_targets": 10,
+        "correct": 5,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 5,
+        "attribution_coverage": 0.5,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 0.5,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 5,
+          "agent->missing": 5
+        }
+      },
+      "plus_input_taint": {
+        "total_targets": 10,
+        "correct": 5,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 5,
+        "attribution_coverage": 0.5,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 0.5,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 5,
+          "agent->missing": 5
+        }
+      },
+      "full": {
+        "total_targets": 10,
+        "correct": 5,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 5,
+        "attribution_coverage": 0.5,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 0.5,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 5,
+          "agent->missing": 5
+        }
+      },
+      "full_without_input_taint": {
+        "total_targets": 10,
+        "correct": 5,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 5,
+        "attribution_coverage": 0.5,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 0.5,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 5,
+          "agent->missing": 5
+        }
+      },
+      "full_without_agent_script": {
+        "total_targets": 10,
+        "correct": 5,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 5,
+        "attribution_coverage": 0.5,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 0.5,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 5,
+          "agent->missing": 5
+        }
+      },
+      "full_without_worker": {
+        "total_targets": 10,
+        "correct": 5,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 5,
+        "attribution_coverage": 0.5,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 0.5,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 5,
+          "agent->missing": 5
+        }
+      },
+      "full_without_document_lineage": {
+        "total_targets": 10,
+        "correct": 5,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 5,
+        "attribution_coverage": 0.5,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 0.5,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 5,
+          "agent->missing": 5
+        }
+      }
+    },
+    "adv_iframe_fetch_handoff": {
+      "current_controller": {
+        "total_targets": 15,
+        "correct": 5,
+        "wrong": 10,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 0.3333333333333333,
+        "correct_fraction": 0.3333333333333333,
+        "false_agent": 0,
+        "false_not_agent": 10,
+        "confusion": {
+          "agent->agent": 5,
+          "agent->human": 10
+        }
+      },
+      "v1_navigation_redirect": {
+        "total_targets": 15,
+        "correct": 5,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 10,
+        "missing": 0,
+        "attribution_coverage": 0.3333333333333333,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 0.3333333333333333,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 5,
+          "agent->unknown": 10
+        }
+      },
+      "plus_document_lineage": {
+        "total_targets": 15,
+        "correct": 15,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 15
+        }
+      },
+      "plus_worker": {
+        "total_targets": 15,
+        "correct": 15,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 15
+        }
+      },
+      "plus_agent_script": {
+        "total_targets": 15,
+        "correct": 15,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 15
+        }
+      },
+      "plus_input_taint": {
+        "total_targets": 15,
+        "correct": 15,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 15
+        }
+      },
+      "full": {
+        "total_targets": 15,
+        "correct": 15,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 15
+        }
+      },
+      "full_without_input_taint": {
+        "total_targets": 15,
+        "correct": 15,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 15
+        }
+      },
+      "full_without_agent_script": {
+        "total_targets": 15,
+        "correct": 15,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 15
+        }
+      },
+      "full_without_worker": {
+        "total_targets": 15,
+        "correct": 15,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 15
+        }
+      },
+      "full_without_document_lineage": {
+        "total_targets": 15,
+        "correct": 5,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 10,
+        "missing": 0,
+        "attribution_coverage": 0.3333333333333333,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 0.3333333333333333,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 5,
+          "agent->unknown": 10
+        }
+      }
+    },
+    "adv_forged_agent_sourceurl": {
+      "current_controller": {
+        "total_targets": 10,
+        "correct": 5,
+        "wrong": 5,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 0.5,
+        "correct_fraction": 0.5,
+        "false_agent": 5,
+        "false_not_agent": 0,
+        "confusion": {
+          "human->agent": 5,
+          "human->human": 5
+        }
+      },
+      "v1_navigation_redirect": {
+        "total_targets": 10,
+        "correct": 0,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 10,
+        "missing": 0,
+        "attribution_coverage": 0.0,
+        "conditional_accuracy": null,
+        "correct_fraction": 0.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "human->unknown": 10
+        }
+      },
+      "plus_document_lineage": {
+        "total_targets": 10,
+        "correct": 0,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 10,
+        "missing": 0,
+        "attribution_coverage": 0.0,
+        "conditional_accuracy": null,
+        "correct_fraction": 0.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "human->unknown": 10
+        }
+      },
+      "plus_worker": {
+        "total_targets": 10,
+        "correct": 0,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 10,
+        "missing": 0,
+        "attribution_coverage": 0.0,
+        "conditional_accuracy": null,
+        "correct_fraction": 0.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "human->unknown": 10
+        }
+      },
+      "plus_agent_script": {
+        "total_targets": 10,
+        "correct": 0,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 10,
+        "missing": 0,
+        "attribution_coverage": 0.0,
+        "conditional_accuracy": null,
+        "correct_fraction": 0.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "human->unknown": 10
+        }
+      },
+      "plus_input_taint": {
+        "total_targets": 10,
+        "correct": 0,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 10,
+        "missing": 0,
+        "attribution_coverage": 0.0,
+        "conditional_accuracy": null,
+        "correct_fraction": 0.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "human->unknown": 10
+        }
+      },
+      "full": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "human->not_agent": 10
+        }
+      },
+      "full_without_input_taint": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "human->not_agent": 10
+        }
+      },
+      "full_without_agent_script": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "human->not_agent": 10
+        }
+      },
+      "full_without_worker": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "human->not_agent": 10
+        }
+      },
+      "full_without_document_lineage": {
+        "total_targets": 10,
+        "correct": 5,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 5,
+        "missing": 0,
+        "attribution_coverage": 0.5,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 0.5,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "human->not_agent": 5,
+          "human->unknown": 5
+        }
+      }
+    },
+    "adv_synthetic_input_handoff": {
+      "current_controller": {
+        "total_targets": 10,
+        "correct": 5,
+        "wrong": 5,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 0.5,
+        "correct_fraction": 0.5,
+        "false_agent": 0,
+        "false_not_agent": 5,
+        "confusion": {
+          "agent->agent": 5,
+          "agent->human": 5
+        }
+      },
+      "v1_navigation_redirect": {
+        "total_targets": 10,
+        "correct": 5,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 5,
+        "missing": 0,
+        "attribution_coverage": 0.5,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 0.5,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 5,
+          "agent->unknown": 5
+        }
+      },
+      "plus_document_lineage": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 10
+        }
+      },
+      "plus_worker": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 10
+        }
+      },
+      "plus_agent_script": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 10
+        }
+      },
+      "plus_input_taint": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 10
+        }
+      },
+      "full": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 10
+        }
+      },
+      "full_without_input_taint": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 10
+        }
+      },
+      "full_without_agent_script": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 10
+        }
+      },
+      "full_without_worker": {
+        "total_targets": 10,
+        "correct": 10,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 0,
+        "missing": 0,
+        "attribution_coverage": 1.0,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 1.0,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 10
+        }
+      },
+      "full_without_document_lineage": {
+        "total_targets": 10,
+        "correct": 5,
+        "wrong": 0,
+        "contested": 0,
+        "unknown": 5,
+        "missing": 0,
+        "attribution_coverage": 0.5,
+        "conditional_accuracy": 1.0,
+        "correct_fraction": 0.5,
+        "false_agent": 0,
+        "false_not_agent": 0,
+        "confusion": {
+          "agent->agent": 5,
+          "agent->unknown": 5
+        }
+      }
+    }
+  },
+  "limitations": [
+    "Twenty authored templates, not representative or held-out browsing.",
+    "Human actions are harness-driven Playwright calls outside the mediated channel; no physical input.",
+    "Assigned sources follow the predeclared convention; autonomous page behavior inherits the loading channel.",
+    "Receiver, driver, and collector share a process; labels are withheld from collector input only.",
+    "Exclusion (not_agent) is sound only under complete mediation; unbound_agent_direct tests a bypass."
+  ]
+}

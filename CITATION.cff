@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "Please cite this software when using Handoff Witness. See README.md for the accompanying manuscript citation."
+type: software
+title: Handoff Witness
+version: 0.3.0
+repository-code: "https://github.com/kshafeekm/handoff-witness"
+url: "https://github.com/kshafeekm/handoff-witness"
+authors:
+  - family-names: Kakkidumban Manayil
+    given-names: Shafeek
+    affiliation: Independent Researcher
+abstract: >-
+  Research prototype for recorded request provenance across human-agent browser
+  handoffs, request-bound approvals, and instruction revision auditing.
+  Includes controlled experiments and reproducibility materials.
+license: MIT
+keywords:
+  - browser security
+  - AI agents
+  - provenance
+  - WebAuthn
+  - reproducible research

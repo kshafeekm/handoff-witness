@@ -1,0 +1,164 @@
+{
+  "analysis_type": "post_hoc_offline_decision_ablation",
+  "provenance": {
+    "total_targets": 75,
+    "observed_targets": 70,
+    "known_predictions": 45,
+    "correct_predictions": 45,
+    "unknown_predictions": 25,
+    "missing_predictions": 5,
+    "observation_coverage": 0.9333333333333333,
+    "attribution_coverage": 0.6,
+    "conditional_accuracy": 1.0,
+    "correct_fraction_all_requests": 0.6,
+    "false_human_count": 0,
+    "false_agent_count": 0,
+    "confusion": {
+      "agent": {
+        "agent": 45,
+        "human": 0,
+        "mixed": 0,
+        "unknown": 10,
+        "missing": 5
+      },
+      "human": {
+        "agent": 0,
+        "human": 0,
+        "mixed": 0,
+        "unknown": 15,
+        "missing": 0
+      }
+    }
+  },
+  "current_controller": {
+    "total_targets": 75,
+    "observed_targets": 70,
+    "known_predictions": 70,
+    "correct_predictions": 50,
+    "unknown_predictions": 0,
+    "missing_predictions": 5,
+    "observation_coverage": 0.9333333333333333,
+    "attribution_coverage": 0.9333333333333333,
+    "conditional_accuracy": 0.7142857142857143,
+    "correct_fraction_all_requests": 0.6666666666666666,
+    "false_human_count": 15,
+    "false_agent_count": 5,
+    "confusion": {
+      "agent": {
+        "agent": 40,
+        "human": 15,
+        "mixed": 0,
+        "unknown": 0,
+        "missing": 5
+      },
+      "human": {
+        "agent": 5,
+        "human": 10,
+        "mixed": 0,
+        "unknown": 0,
+        "missing": 0
+      }
+    }
+  },
+  "root_only": {
+    "total_targets": 75,
+    "observed_targets": 70,
+    "known_predictions": 25,
+    "correct_predictions": 25,
+    "unknown_predictions": 45,
+    "missing_predictions": 5,
+    "observation_coverage": 0.9333333333333333,
+    "attribution_coverage": 0.3333333333333333,
+    "conditional_accuracy": 1.0,
+    "correct_fraction_all_requests": 0.3333333333333333,
+    "false_human_count": 0,
+    "false_agent_count": 0,
+    "confusion": {
+      "agent": {
+        "agent": 25,
+        "human": 0,
+        "mixed": 0,
+        "unknown": 30,
+        "missing": 5
+      },
+      "human": {
+        "agent": 0,
+        "human": 0,
+        "mixed": 0,
+        "unknown": 15,
+        "missing": 0
+      }
+    }
+  },
+  "abstain_all": {
+    "total_targets": 75,
+    "observed_targets": 70,
+    "known_predictions": 0,
+    "correct_predictions": 0,
+    "unknown_predictions": 70,
+    "missing_predictions": 5,
+    "observation_coverage": 0.9333333333333333,
+    "attribution_coverage": 0.0,
+    "conditional_accuracy": null,
+    "correct_fraction_all_requests": 0.0,
+    "false_human_count": 0,
+    "false_agent_count": 0,
+    "confusion": {
+      "agent": {
+        "agent": 0,
+        "human": 0,
+        "mixed": 0,
+        "unknown": 55,
+        "missing": 5
+      },
+      "human": {
+        "agent": 0,
+        "human": 0,
+        "mixed": 0,
+        "unknown": 15,
+        "missing": 0
+      }
+    }
+  },
+  "always_agent": {
+    "total_targets": 75,
+    "observed_targets": 70,
+    "known_predictions": 70,
+    "correct_predictions": 55,
+    "unknown_predictions": 0,
+    "missing_predictions": 5,
+    "observation_coverage": 0.9333333333333333,
+    "attribution_coverage": 0.9333333333333333,
+    "conditional_accuracy": 0.7857142857142857,
+    "correct_fraction_all_requests": 0.7333333333333333,
+    "false_human_count": 0,
+    "false_agent_count": 15,
+    "confusion": {
+      "agent": {
+        "agent": 55,
+        "human": 0,
+        "mixed": 0,
+        "unknown": 0,
+        "missing": 5
+      },
+      "human": {
+        "agent": 15,
+        "human": 0,
+        "mixed": 0,
+        "unknown": 0,
+        "missing": 0
+      }
+    }
+  },
+  "common_assignment_count": 45,
+  "controller_errors_on_provenance_assignments": 10,
+  "replication": {
+    "primary_seed": 20261105,
+    "replication_seed": 20261106,
+    "same_implementation": true,
+    "same_aggregate_metrics": true,
+    "same_scenario_metrics": true,
+    "trial_count": 40,
+    "target_count": 75
+  }
+}

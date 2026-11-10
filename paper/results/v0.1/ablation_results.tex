@@ -1,0 +1,16 @@
+\begin{table}[tb]
+\centering\small
+\begin{tabular}{@{}lrrrrr@{}}
+\toprule
+Decision rule & Correct & Wrong & Unknown & Missing & Coverage \\
+\midrule
+Current controller & 50 & 20 & 0 & 5 & 93.3\% \\
+Always agent when observed & 55 & 15 & 0 & 5 & 93.3\% \\
+Navigation + redirect ancestry & 45 & 0 & 25 & 5 & 60.0\% \\
+Matched navigation roots only & 25 & 0 & 45 & 5 & 33.3\% \\
+Abstain on every observation & 0 & 0 & 70 & 5 & 0.0\% \\
+\bottomrule
+\end{tabular}
+\caption{Post-hoc offline ablation on the same 75 targets. Root-only suppresses every non-root assignment; abstain-all is a sanity baseline. Neither is a new browser run.}
+\label{tab:ablation}
+\end{table}

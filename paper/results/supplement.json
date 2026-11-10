@@ -1,0 +1,300 @@
+{
+  "primary_seed": 20261109,
+  "replication_seed": 20261110,
+  "same_aggregate_metrics": true,
+  "same_scenario_metrics": true,
+  "same_stored_arms": true,
+  "auxiliary_observations": {
+    "primary": {
+      "sw.js:observed": 0,
+      "sw.js:trials": 5
+    },
+    "replication": {
+      "sw.js:observed": 0,
+      "sw.js:trials": 5
+    }
+  },
+  "full_errors_by_scenario": {
+    "unbound_agent_direct": 5,
+    "st_server_state_cross_host": 5
+  },
+  "full_contested_by_scenario": {
+    "human_click_on_agent_page": 5,
+    "agent_click_on_human_page": 5,
+    "st_agent_unread_state": 5,
+    "st_agent_no_state": 5
+  },
+  "full_missing_by_scenario": {
+    "adv_popup_handoff": 5
+  },
+  "request_lineage_groups": {
+    "v02_full": {
+      "correct": 180,
+      "wrong": 5,
+      "contested": 10,
+      "unknown": 0,
+      "missing": 5
+    },
+    "full": {
+      "correct": 180,
+      "wrong": 5,
+      "contested": 10,
+      "unknown": 0,
+      "missing": 5
+    }
+  },
+  "stored_group": {
+    "current_controller": {
+      "correct": 130,
+      "wrong": 45,
+      "contested": 0,
+      "unknown": 0,
+      "missing": 0
+    },
+    "v02_full": {
+      "correct": 130,
+      "wrong": 40,
+      "contested": 0,
+      "unknown": 5,
+      "missing": 0
+    },
+    "plus_state_write": {
+      "correct": 155,
+      "wrong": 15,
+      "contested": 5,
+      "unknown": 0,
+      "missing": 0
+    },
+    "full": {
+      "correct": 160,
+      "wrong": 5,
+      "contested": 10,
+      "unknown": 0,
+      "missing": 0
+    }
+  },
+  "stored": {
+    "joint_effect_targets": 45,
+    "human_control_effect_targets": 15,
+    "false_exoneration": {
+      "v02_full": 40,
+      "plus_state_write": 15,
+      "full": 5
+    },
+    "joint_unknown": {
+      "v02_full": 5,
+      "plus_state_write": 0,
+      "full": 0
+    },
+    "joint_labeled_agent_not_mixed": {
+      "v02_full": 0,
+      "plus_state_write": 5,
+      "full": 5
+    },
+    "contested_human_controls": {
+      "v02_full": 0,
+      "plus_state_write": 5,
+      "full": 10
+    },
+    "false_exoneration_by_scenario": {
+      "v02_full": [
+        "st_cookie_relay",
+        "st_dom_relay",
+        "st_indexeddb_relay",
+        "st_script_cookie_relay",
+        "st_server_state_cross_host",
+        "st_server_state_relay",
+        "st_storage_late_write",
+        "st_storage_relay"
+      ],
+      "plus_state_write": [
+        "st_indexeddb_relay",
+        "st_server_state_cross_host",
+        "st_server_state_relay"
+      ],
+      "full": [
+        "st_server_state_cross_host"
+      ]
+    },
+    "partition": {
+      "applicable_relay_trials": 40,
+      "relays_blocked": 30,
+      "not_blocked": [
+        "st_server_state_cross_host",
+        "st_server_state_relay"
+      ],
+      "control_trials_delivered": 15,
+      "control_trials": 15
+    }
+  },
+  "loss_functions": {
+    "current_controller": "125e + 0c + 0u + 5m",
+    "request_lineage_v02": "45e + 10c + 5u + 5m",
+    "plus_state_write": "20e + 15c + 0u + 5m",
+    "full": "10e + 20c + 0u + 5m"
+  },
+  "state_tradeoff": {
+    "fewer_wrong_than_v02": {
+      "plus_state_write": 25,
+      "full": 35
+    },
+    "extra_contested_than_v02": {
+      "plus_state_write": 5,
+      "full": 10
+    }
+  },
+  "browser_version": "157.0.8103.38",
+  "variants": {
+    "v1_navigation_redirect": [
+      "navigation",
+      "redirect"
+    ],
+    "plus_document_lineage": [
+      "document_lineage",
+      "navigation",
+      "redirect",
+      "renderer_navigation"
+    ],
+    "plus_worker": [
+      "document_lineage",
+      "navigation",
+      "redirect",
+      "renderer_navigation",
+      "worker"
+    ],
+    "plus_agent_script": [
+      "agent_script",
+      "document_lineage",
+      "navigation",
+      "redirect",
+      "renderer_navigation",
+      "worker"
+    ],
+    "plus_input_taint": [
+      "agent_script",
+      "document_lineage",
+      "input_taint",
+      "navigation",
+      "redirect",
+      "renderer_navigation",
+      "worker"
+    ],
+    "v02_full": [
+      "agent_script",
+      "document_lineage",
+      "exclusion",
+      "input_taint",
+      "navigation",
+      "redirect",
+      "renderer_navigation",
+      "worker"
+    ],
+    "plus_service_worker": [
+      "agent_script",
+      "document_lineage",
+      "exclusion",
+      "input_taint",
+      "navigation",
+      "redirect",
+      "renderer_navigation",
+      "service_worker",
+      "worker"
+    ],
+    "plus_state_write": [
+      "agent_script",
+      "document_lineage",
+      "exclusion",
+      "input_taint",
+      "navigation",
+      "redirect",
+      "renderer_navigation",
+      "service_worker",
+      "state_write",
+      "worker"
+    ],
+    "full": [
+      "agent_script",
+      "document_lineage",
+      "exclusion",
+      "input_taint",
+      "navigation",
+      "redirect",
+      "renderer_navigation",
+      "service_worker",
+      "state_host",
+      "state_write",
+      "worker"
+    ],
+    "full_without_input_taint": [
+      "agent_script",
+      "document_lineage",
+      "exclusion",
+      "navigation",
+      "redirect",
+      "renderer_navigation",
+      "service_worker",
+      "state_host",
+      "state_write",
+      "worker"
+    ],
+    "full_without_agent_script": [
+      "document_lineage",
+      "exclusion",
+      "input_taint",
+      "navigation",
+      "redirect",
+      "renderer_navigation",
+      "service_worker",
+      "state_host",
+      "state_write",
+      "worker"
+    ],
+    "full_without_worker": [
+      "agent_script",
+      "document_lineage",
+      "exclusion",
+      "input_taint",
+      "navigation",
+      "redirect",
+      "renderer_navigation",
+      "service_worker",
+      "state_host",
+      "state_write"
+    ],
+    "full_without_document_lineage": [
+      "agent_script",
+      "exclusion",
+      "input_taint",
+      "navigation",
+      "redirect",
+      "service_worker",
+      "state_host",
+      "state_write",
+      "worker"
+    ],
+    "full_without_state_write": [
+      "agent_script",
+      "document_lineage",
+      "exclusion",
+      "input_taint",
+      "navigation",
+      "redirect",
+      "renderer_navigation",
+      "service_worker",
+      "state_host",
+      "worker"
+    ],
+    "full_without_exclusion": [
+      "agent_script",
+      "document_lineage",
+      "input_taint",
+      "navigation",
+      "redirect",
+      "renderer_navigation",
+      "service_worker",
+      "state_host",
+      "state_write",
+      "worker"
+    ]
+  }
+}

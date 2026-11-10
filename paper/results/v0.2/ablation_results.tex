@@ -1,0 +1,23 @@
+\begin{table}[tb]
+\centering\small
+\begin{tabular}{@{}lrrrrr@{}}
+\toprule
+Collector rules & Correct & Wrong & Contested & Unknown & Missing \\
+\midrule
+Current controller (baseline) & 115 & 80 & 0 & 0 & 5 \\
+v0.1 rules: navigation + redirect & 90 & 0 & 0 & 105 & 5 \\
++ document and renderer navigation & 135 & 5 & 0 & 55 & 5 \\
++ worker lineage & 140 & 5 & 0 & 50 & 5 \\
++ injected-script stacks & 145 & 5 & 0 & 45 & 5 \\
++ input taint (no exclusion) & 145 & 0 & 5 & 45 & 5 \\
++ exclusion (full collector) & 180 & 5 & 10 & 0 & 5 \\
+\midrule
+Full $-$ input taint & 180 & 15 & 0 & 0 & 5 \\
+Full $-$ injected-script stacks & 175 & 10 & 10 & 0 & 5 \\
+Full $-$ worker lineage & 175 & 5 & 10 & 5 & 5 \\
+Full $-$ document lineage & 130 & 10 & 0 & 55 & 5 \\
+\bottomrule
+\end{tabular}
+\caption{Ablations on the primary run. Each row re-runs the offline collector with a rule set over the same raw captures (forward ladder above, leave-one-out from the full collector below). No row uses assigned source labels.}
+\label{tab:ablation}
+\end{table}

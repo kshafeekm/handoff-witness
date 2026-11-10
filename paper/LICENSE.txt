@@ -1,0 +1,6 @@
+The manuscript in main.tex and its compiled PDF are licensed by Shafeek Kakkidumban Manayil
+under the Creative Commons Attribution 4.0 International license (CC BY 4.0):
+https://creativecommons.org/licenses/by/4.0/
+
+This notice does not relicense third-party publications cited by the manuscript.
+Software in the accompanying repository is licensed under the root MIT LICENSE.

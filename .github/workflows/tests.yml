@@ -1,0 +1,46 @@
+name: tests
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ['3.11', '3.14']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - run: python -m pip install -e '.[dev]'
+      - run: python -m pytest -q
+      - run: handoff-witness demo
+      - run: handoff-witness verify artifacts/demo/events.jsonl --trusted-key artifacts/demo/recorder-public.pem --checkpoint artifacts/demo/checkpoint.json
+  browser-integration:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.14'
+      - run: python -m pip install -r requirements-tested.txt -r requirements-browser-tested.txt -e .
+      - run: python -m playwright install --with-deps chromium
+      - run: python -m handoff_witness.live --out artifacts/live-ci
+      - run: python -m handoff_witness.approval_live --out artifacts/approval-ci
+      - run: python -m handoff_witness.execution_live --out artifacts/execution-ci
+      - run: python -m handoff_witness.review_live --out artifacts/review-ci
+      - run: python -m handoff_witness.evaluate --repeats 1 --out artifacts/evaluation-ci
+      - run: python -m handoff_witness.workload --repeats 1 --out artifacts/workload-ci
+      - run: handoff-witness verify artifacts/live-ci/evidence/events.jsonl --trusted-key artifacts/live-ci/evidence/recorder-public.pem --checkpoint artifacts/live-ci/evidence/checkpoint.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: controlled-browser-evidence
+          path: |
+            artifacts/live-ci/
+            artifacts/approval-ci/
+            artifacts/execution-ci/
+            artifacts/review-ci/
+            artifacts/evaluation-ci/
+            artifacts/workload-ci/

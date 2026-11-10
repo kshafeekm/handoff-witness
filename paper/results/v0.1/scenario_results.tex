@@ -1,0 +1,19 @@
+\begin{table}[tb]
+\centering\small
+\begin{tabularx}{\linewidth}{@{}Xrrrrrr@{}}
+\toprule
+Scenario & $N$ & P correct & P wrong & P unknown & Missing & C wrong \\
+\midrule
+Agent direct & 5 & 5 & 0 & 0 & 0 & 0 \\
+Redirect, stable control & 15 & 15 & 0 & 0 & 0 & 0 \\
+Redirect, takeover & 15 & 15 & 0 & 0 & 0 & 10 \\
+Agent callback, takeover & 10 & 5 & 0 & 5 & 0 & 5 \\
+Unbound agent direct & 5 & 0 & 0 & 5 & 0 & 0 \\
+Simulated human direct & 5 & 0 & 0 & 5 & 0 & 0 \\
+Human callback, takeover & 10 & 0 & 0 & 10 & 0 & 5 \\
+Agent worker, takeover & 10 & 5 & 0 & 0 & 5 & 0 \\
+\bottomrule
+\end{tabularx}
+\caption{Primary run by scenario. P: provenance; C: current controller. Missing requests are shared by both methods. Each scenario has five trials; $N$ counts requests.}
+\label{tab:scenarios}
+\end{table}

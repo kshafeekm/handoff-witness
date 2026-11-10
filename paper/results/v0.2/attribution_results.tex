@@ -1,0 +1,16 @@
+\begin{table}[tb]
+\centering\small
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{@{}lrrrrrrr@{}}
+\toprule
+Method & Correct & Wrong & Contested & Unknown & Missing & Coverage & Accuracy \\
+\midrule
+Current controller & 115 & 80 & 0 & 0 & 5 & 97.5\% & 59.0\% \\
+v0.1 rules & 90 & 0 & 0 & 105 & 5 & 45.0\% & 100.0\% \\
+Lineage, no exclusion & 145 & 0 & 5 & 45 & 5 & 72.5\% & 100.0\% \\
+Lineage + exclusion & 180 & 5 & 10 & 0 & 5 & 92.5\% & 97.3\% \\
+\bottomrule
+\end{tabular}
+\caption{Primary run: 200 planned targets in 100 trials (20 templates $\times$ 5). Coverage counts correct plus wrong labels over all targets; accuracy is correct over correct plus wrong. Contested means a \emph{mixed} label. The replication run (different seed) produced identical counts.}
+\label{tab:attribution}
+\end{table}

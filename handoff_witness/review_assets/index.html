@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Handoff Witness · Request review</title><link rel="stylesheet" href="/style.css"><script src="/app.js" defer></script></head>
+<body><main>
+<header><div class="eyebrow">HANDOFF WITNESS / LOCAL REVIEW</div><h1>You decide what leaves the browser.</h1>
+<p class="intro">Review each destination before the controlled browser sends a request. Approval applies to one attempt.</p>
+<span id="connection" class="badge">Connecting…</span></header>
+<section id="enrollment" hidden><h2>Set up this review session</h2><p>Register a passkey to approve requests in this run. Your authenticator may ask for a PIN or biometric verification.</p><button id="enroll">Register a passkey</button></section>
+<div id="message" role="status" aria-live="polite"></div>
+<section aria-labelledby="queue-heading"><div class="section-heading"><h2 id="queue-heading">Waiting for your decision</h2><span id="count">0 requests</span></div>
+<p id="empty">No requests are waiting. Nothing is approved automatically.</p><div id="queue"></div></section>
+<section class="history"><h2>Recent decisions</h2><ul id="history"><li>No decisions yet.</li></ul></section>
+<footer>Research prototype. Credential approval does not prove who initiated a request. This session controls intercepted HTTP(S) requests; it is not a system-wide firewall.</footer>
+</main></body></html>

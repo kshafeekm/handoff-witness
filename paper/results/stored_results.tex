@@ -1,0 +1,27 @@
+\begin{table}[tb]
+\centering\footnotesize
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabularx}{\linewidth}{@{}Xllllrrr@{}}
+\toprule
+& & \multicolumn{3}{c}{Label of the effect request} & \multicolumn{3}{c}{Effect deliveries in twins} \\
+\cmidrule(lr){3-5}\cmidrule(l){6-8}
+State that carries the influence & Source & v0.2 & + writes & + host & No writer & No reader & Partitioned \\
+\midrule
+localStorage & joint & \textbf{not\_agent} & mixed & mixed & 0/5 & 0/5 & 0/5 \\
+localStorage, written by a timer & joint & \textbf{not\_agent} & mixed & mixed & 0/5 & 0/5 & 0/5 \\
+Cookie (Set-Cookie header) & joint & \textbf{not\_agent} & mixed & mixed & 0/5 & 0/5 & 0/5 \\
+Cookie (document.cookie) & joint & \textbf{not\_agent} & mixed & mixed & 0/5 & 0/5 & 0/5 \\
+IndexedDB & joint & \textbf{not\_agent} & \textbf{not\_agent} & mixed & 0/5 & 0/5 & 0/5 \\
+Service worker & joint & unknown & agent & agent & 0/5 & 0/5 & 0/5 \\
+DOM of a human-loaded page & joint & \textbf{not\_agent} & mixed & mixed & 0/5 & 0/5 & -- \\
+Server state, same host & joint & \textbf{not\_agent} & \textbf{not\_agent} & mixed & 0/5 & 0/5 & 5/5 \\
+Server state, other host & joint & \textbf{not\_agent} & \textbf{not\_agent} & \textbf{not\_agent} & 0/5 & 0/5 & 5/5 \\
+\midrule
+Human writes, human reads & human & not\_agent & not\_agent & not\_agent & 0/5 & 0/5 & 5/5 \\
+Agent writes, nothing reads & human & not\_agent & \emph{mixed} & \emph{mixed} & 5/5 & 0/5 & 5/5 \\
+Agent visits, writes nothing & human & not\_agent & not\_agent & \emph{mixed} & 5/5 & 0/5 & 5/5 \\
+\bottomrule
+\end{tabularx}
+\caption{Stored-state scenarios, primary run (five trials each; all five agree in every cell). The effect request is issued from a document the human channel loaded, after the agent channel acted. Columns: v0.2 request lineage, plus observed state writes, plus host taint. \textbf{Bold} is a wrong label (a joint effect reported as \emph{not\_agent}); \emph{italic} is a contested label on a human-only effect. Twins re-run each trial without capture: with the agent phase removed, with the human phase removed, and with one browser storage partition per controlling channel (not applicable to the single-document row).}
+\label{tab:stored}
+\end{table}

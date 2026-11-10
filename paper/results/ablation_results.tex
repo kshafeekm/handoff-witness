@@ -1,0 +1,29 @@
+\begin{table}[tb]
+\centering\small
+\begin{tabular}{@{}lrrrrr@{}}
+\toprule
+Collector rules & Correct & Wrong & Contested & Unknown & Missing \\
+\midrule
+Current controller (baseline) & 245 & 125 & 0 & 0 & 5 \\
+v0.1 rules: navigation + redirect & 140 & 0 & 0 & 230 & 5 \\
++ document and renderer navigation & 185 & 5 & 0 & 180 & 5 \\
++ worker lineage & 190 & 5 & 0 & 175 & 5 \\
++ injected-script stacks & 195 & 5 & 0 & 170 & 5 \\
++ input taint & 195 & 0 & 5 & 170 & 5 \\
++ exclusion (v0.2 collector) & 310 & 45 & 10 & 5 & 5 \\
+\midrule
++ service worker lineage & 315 & 45 & 10 & 0 & 5 \\
++ observed state writes & 335 & 20 & 15 & 0 & 5 \\
++ host taint (v0.3 collector) & 340 & 10 & 20 & 0 & 5 \\
+\midrule
+Full $-$ input taint & 340 & 20 & 10 & 0 & 5 \\
+Full $-$ injected-script stacks & 335 & 10 & 25 & 0 & 5 \\
+Full $-$ worker lineage & 335 & 10 & 20 & 5 & 5 \\
+Full $-$ document lineage & 265 & 15 & 0 & 90 & 5 \\
+Full $-$ observed state writes & 340 & 10 & 20 & 0 & 5 \\
+Full $-$ exclusion & 200 & 0 & 5 & 165 & 5 \\
+\bottomrule
+\end{tabular}
+\caption{Ablations on the primary run. Each row re-runs the offline collector with a rule set over the same raw captures: the request-lineage ladder, the three state rules, then leave-one-out from the full collector. No row uses assigned source labels.}
+\label{tab:ablation}
+\end{table}
