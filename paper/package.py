@@ -100,7 +100,7 @@ def main():
         'Bundled signatures/keys prove consistency only, not independent authenticity.\n'
         'All browsing data are synthetic loopback fixtures; human labels and approvals are simulated.\n'
         'The steering pilot uses real local model outputs. Inference and browser replay are separate phases.\n'
-        'Version 0.3.0. Compact results of v0.1 and v0.2 are under paper/results/v0.1 and paper/results/v0.2;\n'
+        'Version 0.3.1. Compact results of v0.1 and v0.2 are under paper/results/v0.1 and paper/results/v0.2;\n'
         'their code is not distributed, so they can be recomputed but not re-collected.\n'
         'Software: MIT (LICENSE). Manuscript: CC BY 4.0 (paper/LICENSE.txt).\n'
     ).encode()
@@ -115,6 +115,8 @@ def main():
 
     abstract = re.search(r'\\begin\{abstract\}(.*?)\\end\{abstract\}', source, re.S)[1]
     abstract = ' '.join(abstract.replace(r'\%', '%').split())
+    if len(abstract) > 1920 or not abstract.isascii() or chr(92) in abstract:
+        raise ValueError('Use a plain ASCII abstract of at most 1920 characters for arXiv metadata.')
     title = re.search(r'\\title\{([^}]+)\}', source)[1].replace('\\\\', ' ').replace('--', '-')
     info = subprocess.check_output(['pdfinfo', str(PDF / 'main.pdf')], text=True)
     pages = re.search(r'Pages:\s+(\d+)', info)[1]
@@ -123,7 +125,7 @@ def main():
         f'Title: {title}\nAuthors: Shafeek Kakkidumban Manayil\nAffiliation: Independent Researcher\n'
         'Primary category: cs.CR (Cryptography and Security)\n'
         'License: Creative Commons Attribution 4.0 International (CC BY 4.0)\n'
-        f'Comments: {pages} pages, {tables} tables; version 0.3; code and experimental data included as ancillary material\n'
+        f'Comments: {pages} pages, {tables} tables; version 0.3.1; code and experimental data included as ancillary material\n'
         'Journal reference: leave blank\nDOI: leave blank\nReport number: leave blank\n\n'
         f'Abstract:\n{abstract}\n\n'
         'Upload arxiv-source.zip as TeX source. It includes the code/data archive under anc/.\n'

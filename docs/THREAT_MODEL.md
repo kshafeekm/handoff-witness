@@ -2,10 +2,7 @@
 
 ## Version 0.3: stored state
 
-- **State isolation.** Exclusion has a second precondition: no agent-written
-  state reachable when the request is made. Stores are the live document (DOM,
-  script heap), the profile (cookies, web storage, IndexedDB, caches,
-  service-worker registrations) and server state.
+- **State isolation.** Removing all reachable agent-written state is sufficient to rule out a stored contribution to request issuance. An unused value can remain reachable without affecting issuance. Exclusion also requires complete relevant initiation lineage.
 - **Stored-state relay.** A page the agent loaded writes state; a page the
   person later loads reads it and issues a request. Request lineage sees only
   the person's navigation and reports `not_agent`, although the request would
@@ -28,9 +25,7 @@
   relays and the continuity they share a mechanism with. It does not reach
   server state. The prototype emulates it with separate browser contexts for
   measurement; it is not a deployed defense.
-- **Trade-off.** Shared state across the handoff, a `not_agent` label for what
-  the person then does, and soundness of that label cannot all hold. Dropping
-  exclusion never mislabels and never clears the agent.
+- **Trade-off.** Flagging previously contacted hosts catches more relays and contests more independent actions. The no-exclusion variant reported zero wrong labels on this workload and abstained on 165 targets.
 
 ## Version 0.2: mediation and exclusion
 
@@ -39,12 +34,7 @@
   become agent roots. Everything else that reaches the browser is unmediated.
 - **Positive agent evidence** needs an authentic transcript and sound lineage
   edges, not complete mediation.
-- **Exclusion (`not_agent`)** means no mediated command explains the cause. It
-  needs complete mediation; an agent that bypasses the channel is
-  indistinguishable from a person in the transcript (measured: the bypass
-  template is wrong under every collector that uses exclusion). Complete
-  mediation is not sufficient: see state isolation above. It never means
-  `human`.
+- **Exclusion** records a lack of observed agent involvement under the configured rules. The direct navigation and bypass fixtures receive the same exclusion label despite different control markers. Physical human identity requires additional evidence.
 - **Adversarial page.** May run main-world JavaScript, navigate itself, submit
   forms, open popups and frames, dispatch synthetic events, and imitate the
   `hw-agent-…` source-URL format. It cannot reach isolated worlds, the DevTools

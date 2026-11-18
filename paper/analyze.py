@@ -5,6 +5,7 @@ per-target rows. No browser is launched; raw captures are re-collected by
 verify_runs.py. Ablations are separate collector runs over the same captures,
 not post-hoc relabelling of decisions.
 """
+from collections import Counter
 import json
 import sys
 from pathlib import Path
@@ -182,6 +183,7 @@ def stored_summary(report, rows):
     applicable = {k: v for k, v in relays.items() if v['partitioned'] is not None}
     return {
         'joint_effect_targets': len(joint), 'human_control_effect_targets': len(controls),
+        'joint_label_counts': {method: dict(Counter(row[method] for row in joint)) for method in STATE_VARIANTS},
         'false_exoneration': {m: sum(r[m] == 'not_agent' for r in joint) for m in STATE_VARIANTS},
         'joint_unknown': {m: sum(r[m] == 'unknown' for r in joint) for m in STATE_VARIANTS},
         'joint_labeled_agent_not_mixed': {m: sum(r[m] == 'agent' for r in joint) for m in STATE_VARIANTS},

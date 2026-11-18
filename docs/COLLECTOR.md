@@ -2,9 +2,7 @@
 
 ## v0.3 state rules
 
-Three rules follow agent influence through stored state. They only add agent
-roots: they can turn `not_agent` into `mixed`, never produce `not_agent`, and
-never resolve `unknown`.
+Service-worker lineage can resolve a previously unknown worker request. The two taint rules add possible agent ancestors to later activity.
 
 | Rule | Trigger | Effect | Blind to |
 |---|---|---|---|
@@ -45,7 +43,7 @@ records frame and renderer-navigation events, worker sessions
 pointer/key events from an isolated-world observer. Analyze with
 `handoff_witness.lineage.collect(trace, rules)`; `RULES` lists the switchable
 rules and `V1_RULES` reproduces the v0.1 rule set. Labels are `agent`,
-`not_agent` (exclusion; requires complete mediation and state isolation),
+`not_agent` (exclusion under the configured observation rules; see the [threat model](THREAT_MODEL.md) for the assumptions),
 `mixed`, and `unknown`.
 
 ## v0.1 collector

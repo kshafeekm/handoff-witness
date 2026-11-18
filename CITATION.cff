@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "Please cite this software when using Handoff Witness. See README.md for the accompanying manuscript citation."
 type: software
 title: Handoff Witness
-version: 0.3.0
+version: 0.3.1
 repository-code: "https://github.com/kshafeekm/handoff-witness"
 url: "https://github.com/kshafeekm/handoff-witness"
 authors:

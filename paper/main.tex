@@ -16,37 +16,27 @@
 \newtheorem{definition}{Definition}
 \title{Who Caused the Access?\\Evidence Boundaries in Human--Agent Browser Handoffs}
 \author{Shafeek Kakkidumban Manayil\\Independent Researcher}
-\date{November 10, 2026 (version 0.3)}
+\date{November 18, 2026 (version 0.3.1)}
 \begin{document}
 \maketitle
 \begin{abstract}
-When an agent and a person share a browser session, a request can be issued
-after control has moved away from the channel that caused it. Labeling it with
-the current controller is then wrong, and a server that sees only session
-credentials cannot tell the difference. Agent actions can be routed through a
-mediated, logged channel, so agent origin can be evidenced positively. Human
-origin cannot be evidenced from a browser transcript at all: the strongest
-available claim is \emph{exclusion} (nothing the agent did explains the
-request), reported as \emph{not-agent}. We show that exclusion needs two
-conditions. The first, complete mediation, is the classic one. The second,
-\emph{state isolation}, fails by design in a handoff: the cookies, storage,
-workers, and server-side session that let a person continue an agent's work also
-let the agent's work continue through the person. On a predeclared 32-template
-workload (375 target requests), a collector that follows request lineage through
-redirects, documents, workers, injected scripts, and trusted input labels 40 of
-45 requests that depend on agent-written state not-agent; counterfactual twins
-confirm that each of the 45 needs both parties. Following observed state writes
-reduces these false exonerations to 15, and tainting every host the agent
-contacted reduces them to 5, while contesting 10 of 15 human-only controls. The
-remaining 5 are server state shared across hosts, which no browser-side observer
-sees. Giving each controller its own storage partition blocks all six
-client-state relays, neither server-state relay, and legitimate continuity by the
-same mechanism. On the 20 templates without stored state every label matches
-version 0.2 (180 of 200 correct; the 5 errors are the mediation bypass). Each
-variant is a separate collector run over the same raw captures, and a second seed
-reproduces every count. An appendix replays a counterbalanced 1,152-output
-local-model pilot through a fixed approval broker. None of this authenticates a
-person, establishes intent, or assigns legal responsibility.
+When a person takes over a browser from an AI agent, a request issued by the person's
+page may depend on state the agent left behind. We study whether an agent action
+contributed to issuing a particular request. Handoff Witness records agent commands and
+follows their effects through browser events. In a controlled Chromium workload, we
+compare request lineage with two rules that flag possible influence through stored
+state. Each run covers 32 scripted scenarios and 375 target requests. For 45 effects,
+omitting either the agent phase or the simulated human phase prevented delivery. Request
+lineage alone labeled 40 of these effects as free of agent involvement. Adding
+service-worker lineage and tracking observed state writes reduced that count to 15.
+Flagging hosts the agent had contacted reduced it to five, while flagging 10 of 15
+human-only control effects. On the 45 joint effects, the full collector reported both
+parties in 35 cases, the agent alone in five, and no agent involvement in five. The five
+missed contributions used server state shared across hostnames. The second seed
+reproduced these counts on the same scenarios. These findings show where a browser
+transcript can support attribution and where the available observations leave multiple
+causal explanations. The labels concern request issuance in a controlled session.
+Physical identity, intent, and legal responsibility require other evidence.
 \end{abstract}
 
 \section{Introduction}
@@ -97,15 +87,11 @@ The paper makes four contributions beyond that separation.
 \item \textbf{Asymmetric identifiability} (Section~\ref{sec:model}). Positive
 evidence is available for the agent, because its actions can be forced through a
 logged channel; for everything else, a transcript supports only exclusion. We
-state when each label is sound, show that a mediation bypass is
-indistinguishable from human action in the transcript, and therefore replace the
-\emph{human} label with \emph{not-agent}.
-\item \textbf{The stored-state gap} (Proposition~\ref{prop:state}
-and Section~\ref{sec:stored}). Exclusion is sound only if, in addition to
-complete mediation, no agent-written state is reachable when the request is
-made. Request lineage cannot check this, and we measure how often it then
-exonerates the person's channel of agent influence. Continuity and relay are the
-same mechanism, so the condition cannot be met without giving something up.
+state the observation assumptions behind exclusion and measure errors when a request originates outside the mediated channel.
+\item \textbf{The stored-state gap} (Proposition~\ref{prop:state} and Section~\ref{sec:stored}).
+A later page can issue a request because of an earlier write, even when its request
+lineage contains only the later navigation. We measure how often three collectors miss
+this contribution and how often they flag human-only effects.
 \item \textbf{A lineage collector for handoffs} (Section~\ref{sec:design}) over the
 Chrome DevTools Protocol \cite{cdp}: navigation binding, redirect chains,
 document and renderer-navigation lineage, worker and service-worker lineage,
@@ -125,13 +111,13 @@ auto-attachment, complete mediation, taint through browser storage, stored-state
 attacks, storage partitioning, or adversarial evaluation of attribution systems
 are new; Section~\ref{sec:related} lists the prior work each builds on. The
 narrower claim is the combination: lineage rooted at a mediated agent channel,
-evaluated across control changes, with an explicit exclusion label whose two
-failure modes---bypass and stored state---are measured rather than assumed away.
+evaluated across control changes, with an explicit exclusion label whose failures we measure under two conditions: unmediated access and persistent state.
 
 \section{Evidence model and identifiability}\label{sec:model}
 Let $r$ be a request observed at time $t_o(r)$ and $C(t)$ the recorded controller.
-A control-marker baseline predicts $\widehat I_C(r)=C(t_o(r))$. It is wrong whenever
-a cause at $t_i$ precedes a handoff at $t_h$ with $t_i<t_h<t_o(r)$.
+A control-marker baseline predicts $\widehat I_C(r)=C(t_o(r))$. For a single-source request, this baseline misattributes the request when
+its causal source differs from the controller at observation. A handoff
+between initiation and observation can produce that mismatch.
 
 \paragraph{An observation boundary.} If two executions present identical request
 bytes and credentials to a server, any deterministic classifier of that
@@ -171,62 +157,54 @@ the person.
 created only for successful commands in $M$; by edge soundness the path from such
 a root to $r$ is causal. \hfill\qedsymbol
 
-\begin{proposition}[exclusion needs complete mediation]\label{prop:exclusion}
-Suppose an agent can cause a top-level navigation without using $M$. Then there
-are two executions, one agent-caused through that bypass and one human-caused,
-whose transcripts are identical up to identifiers. Any collector that labels the
-human execution not-agent labels the bypass not-agent too. Complete mediation
-is therefore necessary for a sound not-agent label. It is not sufficient.
+\begin{proposition}[limits of unmediated observations]\label{prop:exclusion}
+Suppose an agent and a person can each initiate a navigation outside $M$. If both
+executions yield the same recorded commands, control markers, and browser observations,
+any deterministic transcript classifier gives them the same label. It therefore cannot
+correctly exclude the agent in one and identify the agent in the other.
 \end{proposition}
-\noindent\emph{Argument.} The bypass and the human action both reach the browser
-outside $M$, so the recorder sees the same browser-initiated navigation with no
-explaining command; the observation-boundary argument applies.
-Section~\ref{sec:results} measures this case: the five bypass targets are wrong
-under every collector that uses exclusion. \hfill\qedsymbol
+\noindent\emph{Argument.} Equal inputs yield equal outputs. Routing every agent action
+through $M$ removes this particular ambiguity. The experiment measures the collector's
+treatment of unmediated navigation under its recorded markers
+(Section~\ref{sec:results}). \hfill\qedsymbol
 
 \begin{definition}
 A \emph{store} is anything a later execution can read that an earlier one wrote:
 the live document (its DOM and script heap), profile state (cookies, web storage,
 IndexedDB, caches, service-worker registrations), and state kept by servers. A
-request $r$ \emph{depends on} a write when, with the write removed and everything
-else unchanged, $r$ is not issued or is issued differently. \emph{State
-isolation} holds for $r$ when no store reachable from the execution that issues
-$r$ holds a write that an agent action caused.
+request $r$ \emph{depends on} a write for issuance if removing that write under
+otherwise matched conditions prevents issuance of the specified target request. Targets
+in the workload are identified by trial and path, with delivery checked at the receiver.
+A change to the bytes of an otherwise issued request is a separate outcome. For example,
+an automatically attached cookie can change a navigation header while the person's
+action still issues the same navigation. The server's use of that cookie can in turn
+cause a later target to be issued.
+\emph{State isolation} for $r$ means that no store reachable by its issuing execution contains a write caused by an agent action.
 \end{definition}
 
-\begin{proposition}[exclusion needs state isolation]\label{prop:state}
-Assume complete mediation, and let a store be writable by a page the agent
-loaded and readable by a page the person later loads. (a) There is an execution
-in which a request $r$ depends on an agent-caused write while its initiation
-ancestry (navigations, redirects, documents, workers, scripts, and input)
-contains only exclusion roots; a collector that follows initiation labels $r$
-not-agent although $r$ would not exist without the agent. (b) If the write raises
-no event in the transcript, that execution is indistinguishable from one in
-which the agent's page wrote nothing and the person's page issued $r$
-unconditionally, so every rule over the transcript labels both not-agent or
-neither. Conversely, if complete mediation holds, the collector observes every
-command in $M$, and state isolation holds for $r$, then a not-agent label on $r$
-is correct about the agent.
+\begin{proposition}[limits of exclusion from request lineage]\label{prop:state}
+(a) Even under complete mediation, a target whose recorded initiation ancestry contains only exclusion roots can depend on an agent-caused write.
+(b) If two executions agree on all observations available to a classifier and differ on whether that write caused issuance, the classifier cannot identify the correct source in both.
 \end{proposition}
-\noindent\emph{Argument.} (a) The reading page is loaded by an unmediated
-navigation and its own script initiates $r$; the write happened in another
-document, so no initiation edge connects the two. (b) is the observation-boundary
-argument applied to that pair. For the converse, an agent action can influence
-$r$ only by initiating something in its ancestry, which complete mediation and
-the recorded ancestry exclude, or through something that persists from the action
-to $r$, which is a store and which state isolation excludes. \hfill\qedsymbol
+\noindent\emph{Argument.} For (a), let an agent-loaded page set a flag. A later
+human-loaded page issues a target only if the flag is set. The navigation and its script
+explain the immediate initiation, while the earlier write is necessary for delivery. For
+(b), consider two servers with the same outward responses on the recorded run. One
+returns the issuing page only because the flag was set. The other always returns that
+page. They can produce the same transcript while responding differently to removal of
+the write. \hfill\qedsymbol
 
-\paragraph{Continuity and relay are one mechanism.} State isolation is not a
-hardening step that a careful deployment can switch on. A person who takes over
-a session wants the agent's sign-in cookie, the cart it filled, and the draft it
-saved; each is an agent-caused write that changes what the person's next request
-does. The read that provides continuity is the read that makes the request
-jointly caused. Three goals therefore pull against each other: sharing state
-across the handoff, labeling what the person then does on those sites not-agent,
-and that label being sound. Section~\ref{sec:stored} measures collectors that
-give up each in turn. For a request that depends on both an agent-caused write
-and an unmediated action, neither single source is right; we call its source
-\emph{joint}, and the faithful label is mixed.
+Within this model, a sufficient basis for exclusion is complete mediation, complete
+capture and correct linkage of every relevant initiation path, and the absence of an
+agent-caused state dependency for issuance. State isolation suffices for the last
+condition. For example, an agent-written value that is never read cannot cause issuance
+through that value. The deployed collector would need evidence for these assumptions
+before interpreting an exclusion label as a causal guarantee.
+
+For a relay that requires both the earlier write and the later unmediated action, the
+assigned source is \emph{joint}. A \emph{mixed} prediction records both contributions. A
+mixed prediction can also result from precautionary host or storage rules when the
+collector has no evidence that a page read the value.
 
 \begin{proposition}[no transcript-only human label]\label{prop:human}
 The unmediated class contains the page's own code, extensions, and other software,
@@ -252,7 +230,7 @@ Evidence & Supports, within the trust model & Does not establish \\
 \midrule
 Instructions & Retained channel text and revisions & Intent or causal contribution of each span \\
 Agent lineage & A mediated command among the request's causes & That no one else also contributed \\
-Not-agent & No mediated command or tracked agent-written state explains it (needs complete mediation and state isolation) & That a person caused it; that untracked state played no part \\
+Not-agent & No mediated command or tracked agent-written state explains it (conditional on mediation, complete relevant lineage, and absence of a causal state dependency) & That a person caused it; that untracked state played no part \\
 Control & Current supplied controller marker & Origin of outstanding effects \\
 Approval & Credential assertion bound to the request & Comprehension or initiating actor \\
 Execution & Broker-observed attempt stages & Independent receipt or remote success \\
@@ -354,8 +332,7 @@ It cannot reach isolated worlds, the DevTools session, or the recorder. It may
 write any state its origin can reach (cookies, web storage, IndexedDB, caches,
 service workers), and the servers behind it keep state across requests and
 across host names. State written before capture begins has no lineage.
-Exclusion additionally assumes complete mediation and state isolation; we
-measure what happens when each fails rather than assuming either.
+An exclusion guarantee also depends on complete relevant lineage and on ruling out an agent contribution through state. The experiments examine cases where these conditions can fail.
 
 An attacker editing exported files is detected when verification uses an
 independently pinned key, the expected session identifier, and a retained terminal
@@ -452,8 +429,8 @@ direction from exclusion. They never create a not-agent label and never resolve
 an unknown; they only add agent roots, which turns not-agent into mixed. Taint is
 monotone within a session and transitive: a response to a request that carried an
 agent-set cookie is tainted, and so are the cookies that response sets. A request
-is not tainted by a cookie it merely carries, since the browser attaches cookies
-to every request for the domain; what answers it is, since the answer may depend
+is not tainted by a cookie it merely carries, since cookie attachment can change headers
+without changing issuance; what answers it is, since the answer may depend
 on the cookie. A carried cookie that no observed response set was written by
 script or predates capture, and is charged to every document seen in its domain.
 Only agent-rooted writes taint: human-written state is not tracked, so an agent
@@ -588,8 +565,10 @@ collector, run on the same captures, is wrong on 45.
 that version 0.2 reported: 180 correct, 5 wrong, 10 contested, 5 missing
 (Table~\ref{tab:scenarios}). The five wrong labels are the mediation-bypass
 template: the agent's unmediated navigation becomes not-agent, as
-Proposition~\ref{prop:exclusion} predicts, and its transcript matches the
-human-navigation template's. The ten contested labels are the two cross-channel
+Proposition~\ref{prop:exclusion} illustrates. Both templates receive the same exclusion
+label. Their recorded control markers differ, so these traces demonstrate a
+classification error rather than an identical pair of transcripts. The ten contested
+labels are the two cross-channel
 templates: a human click on an agent page and an agent click on a human page both
 produce documents with agent and exclusion roots. The five missing targets are
 popup documents, opened in a new target that the page-level capture never
@@ -627,8 +606,7 @@ the effect not-agent in 40 of the 45 relay trials. Each of those requests is
 issued by a document the human channel loaded through a browser-initiated
 navigation, so exclusion applies and no initiation edge leads back to the agent.
 Mediation was complete in every one of these trials: each agent action went
-through $M$ and was recorded. The label is wrong anyway, as
-Proposition~\ref{prop:state}(a) says it must be. The other five trials are the
+through $M$ and was recorded. The label is wrong anyway, as in the construction of Proposition~\ref{prop:state}(a). The other five trials are the
 service-worker relay, whose effect is issued from a worker session that the
 version 0.2 collector does not follow; it is unknown, not exonerated.
 
@@ -645,10 +623,13 @@ reads cannot tell that from a relay.
 \paragraph{Host taint.} Treating every host the agent has contacted as tainted
 closes IndexedDB and same-host server state, which leaves five false
 exonerations, and contests a second control, in which the agent's page wrote
-nothing at all. That control and the IndexedDB relay are the pair of
-Proposition~\ref{prop:state}(b). The state-write collector labels both
-not-agent and host taint labels both mixed; no rule over these events separates
-them. On this workload host taint subsumes the state-write rule: removing state
+nothing at all. The state-write collector labels both the no-write control and the
+IndexedDB relay not-agent, and host taint labels both mixed. Their recorded initiator
+stacks differ: the IndexedDB callback is named \texttt{g.onsuccess}, while the control
+callback is anonymous in all five repetitions of each seed. This fixture-specific
+difference illustrates why identical collector labels do not establish the observational
+premise of Proposition~\ref{prop:state}(b). On this workload host taint subsumes the
+state-write rule: removing state
 writes from the full collector changes no count (Table~\ref{tab:ablation}). The
 two can differ when a cookie's domain spans host names, which no template
 exercises. The write rule earns its place as the narrower operating point, with
@@ -659,10 +640,9 @@ to remember a flag, and the person later reaches the same server under another
 host name, where the page is served with the flag applied. Nothing in the
 browser links the two visits: no cookie, no storage, no shared host name. A rule
 keyed on the server's network address would catch this template and miss a
-shared back end behind two addresses. In general, a browser-side rule that is
-sound against server state has to contest whatever a person does on any host
-after the agent's first action, and that is the no-exclusion variant below.
-Closing this case needs evidence from the server.
+shared back end behind two addresses. The collector lacks evidence connecting the two
+server visits. Server-side provenance could establish whether the earlier write was read
+when producing the second response.
 
 \paragraph{Partitioning instead of tracking.} Giving each controller its own storage
 partition stops a relay instead of labeling it. All six client-state relays
@@ -675,13 +655,13 @@ the session. Chrome partitions storage by top-level site
 \cite{storagepartitioning}; partitioning by controller is not a browser feature,
 and we emulate it with separate browser contexts.
 
-\paragraph{One of three.} Each operating point gives up one of the goals of
-Section~\ref{sec:model}. Request lineage keeps shared state and a not-agent label
-and loses soundness, 40 times in 45. Host taint keeps shared state and withdraws
-the label wherever the agent has been, including for 10 of 15 effects that owed
-the agent nothing, and it is still unsound against a server that shares state
-across hosts. Partitioning keeps a sound label for client state and gives up the
-sharing. Dropping exclusion gives up the label.
+\paragraph{Detection and joint attribution.} Among the 45 joint effects in each run, the
+full collector reported mixed for 35, agent for five, and not-agent for five. It
+detected agent involvement in 40/45 (88.9\%) and represented both parties in 35/45
+(77.8\%). The five agent-only predictions all came from the service-worker template. Its
+worker lineage captures the agent's registration but omits the later navigation that
+woke the worker. The aggregate score credits detection on these cases.
+Table~\ref{tab:stored} shows the labels needed to evaluate completeness.
 
 \subsection{Ablations and costs}
 \input{results/ablation_results.tex}
@@ -757,7 +737,7 @@ capture observes one tab.
 The collector inherits Chrome's view: the asynchronous-stack depth cap can
 truncate chains, lineage breaks when page code later calls functions the agent
 defined, and popups and other new targets are unobserved. Input taint is
-document-wide and coarse. Exclusion is only as good as its two preconditions. A
+document-wide and coarse. Exclusion depends on the coverage of recorded initiation paths and stored dependencies. A
 real deployment must make $M$ the agent's only path to the browser, which this
 prototype does by construction of the fixture, not by isolation, and it must
 either partition state or accept the contested labels above. The capture is not
@@ -769,10 +749,9 @@ site is permitted, or assigns legal responsibility; the code is not a basis for
 attributing real people's browsing.
 
 \section{Reproducibility}
-The repository contains the runner, collector, tests, and per-run manifests,
+The full artifact is available from \url{https://github.com/kshafeekm/handoff-witness/releases/tag/v0.3.1}. The repository contains the runner, collector, tests, and per-run manifests,
 reports, and per-target rows; the artifact archive adds every raw capture,
-receiver ledger, twin result, signed provenance record, and public key. From the
-repository root:
+receiver ledger, twin result, signed provenance record, and public key. From the extracted full artifact directory:
 \begin{verbatim}
 python -m pytest -q
 python -m handoff_witness.workload --channel chrome \
@@ -799,19 +778,16 @@ Whoever controls the browser now is a poor answer to who caused a request. Agent
 causation can be evidenced positively when the agent is forced through a
 recorded channel, and lineage through redirects, documents, renderer
 navigations, workers, and injected scripts preserves that evidence across
-handoffs. Human causation cannot be evidenced from a transcript; the honest label
-is not-agent, and it has two preconditions. Complete mediation is the familiar
-one. State isolation is the one a handoff breaks by design, because the state a
-person inherits from the agent is the point of handing over. With mediation
-complete, request lineage cleared the agent of 40 of 45 effects that would not
-have happened without it. Tracking state writes and agent-touched hosts brings
-that to five and withdraws the label from ten effects the agent did not
-influence; partitioning storage by controller stops the client-side relays and
-the continuity with them; neither reaches state a server shares across hosts. A
-deployment can have shared state, an exonerating label, or a sound one, but on
-this evidence not all three. Stronger claims need server-side evidence, an
-authenticated input path, and an observer outside the controller's
-administrative boundary, not more signatures on the same observations.
+handoffs. The most informative errors occurred when the immediate initiator was known.
+Request lineage missed the earlier agent contribution on 40 of 45 joint effects.
+Tracking observed writes reduced that count to 15. Extending the rule to previously
+contacted hosts reduced it to five and contested 10 of 15 human-only controls. Of the 40
+joint effects on which the full collector recognized agent involvement, it identified
+both parties on 35. A record used to review a handoff should therefore distinguish
+observed initiation, possible stored influence, and evidence that both parties
+contributed. Testing these distinctions on independently designed tasks and on services
+with observable server-side dependencies would establish how far these results extend
+beyond the fixtures.
 
 \section*{Tool-use disclosure}
 AI-assisted tools were used for implementation, literature discovery, analysis,
@@ -838,7 +814,7 @@ snippet claiming approval, now delivered in the tool role. Every task, condition
 and seed (17, 29, 43) is shown in all four arrangements of letter (A/B) and listing
 order, for two four-bit MLX Qwen3 models \cite{qwen3,mlxmodels} (0.6B and 1.7B,
 same pinned revisions as v0.1): 1,152 outputs. A strict JSON parser is primary and
-a fence-tolerant parser secondary, both preregistered; invalid outputs and
+a fence-tolerant parser secondary, both specified in the locally frozen plan before inference; invalid outputs and
 abstentions stay in denominators. Estimands are paired differences against benign
 matched on task, seed, and arrangement, with 10,000-sample task-cluster percentile
 bootstraps.
@@ -851,9 +827,10 @@ Every one of those 45 choices, and all 19 benign ones, occurred when the
 restricted source was labeled A; with restricted labeled B the paired difference is
 exactly zero in both listing orders. The label effect within the indirect
 condition is 62.5 points (48.6--77.8), larger than the pressure effect itself,
-and listing the restricted source first lowers its choice by 31.9 points. Pressure
-therefore acts here by moving the model toward its preferred letter, not toward
-restricted content in general. Explicit instructions name the letter and still
+and listing the restricted source first lowers its choice by 31.9 points. The measured
+pressure effect occurred only when the restricted source was labeled A. The design
+identifies an interaction with option labeling and leaves the underlying model mechanism
+open. Explicit instructions name the letter and still
 succeed less often when it is B (69/72 vs 28/72 for 1.7B). Untrusted tool-role
 snippets are followed 126/144 times by 1.7B and 125/144 times by 0.6B, in both
 letters. Under the strict parser the 0.6B model emits 96, 96, 92, and 10 invalid outputs
@@ -898,6 +875,11 @@ after copying the archived \texttt{plan.json} and \texttt{plan.sha256} into
 separately.
 
 \section{Changes from earlier versions}
+Version 0.3.1 clarifies the issuance outcome, distinguishes involvement detection from
+complete joint attribution, and separates the formal observation assumptions from
+differences measured in fixture traces. The numerical results use the original archived
+runs.
+
 Version 0.3 adds the stored-state group (twelve templates, 175 targets) and its
 counterfactual twins, the state-isolation condition and
 Proposition~\ref{prop:state}, service-worker lineage, the state-write and

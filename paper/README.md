@@ -1,4 +1,4 @@
-# Preprint and submission package (version 0.3)
+# Preprint and submission package (version 0.3.1)
 
 Title: **Who Caused the Access? Evidence Boundaries in Human-Agent Browser Handoffs**
 
@@ -13,11 +13,7 @@ keyword search, and the paper says so.
 
 ## What changed in 0.3
 
-- **A corrected guarantee.** Version 0.2 said a `not_agent` label was sound
-  under complete mediation. It also needs *state isolation*: no agent-written
-  state reachable when the request is made. A handoff breaks that on purpose,
-  because the cookies, storage, workers and server session a person inherits
-  are how they continue the agent's work.
+- **Scope of exclusion.** Complete mediation, complete and accurate initiation lineage, and evidence that agent-written state did not cause issuance together suffice for exclusion in the model. An unread value can be reachable without affecting issuance. Version 0.3.1 clarifies this scope and distinguishes partial from complete joint attribution.
 - **Stored-state workload** (`handoff_witness/workload.py`, protocol v3): twelve
   new templates. Nine relay an agent-phase write to a request the person's page
   issues (localStorage, a late storage write, header and script cookies,
@@ -25,7 +21,7 @@ keyword search, and the paper says so.
   the same host and across hosts); three are human-only controls. 32 templates,
   160 trials and 375 targets per run. Primary seed 20261109, replication 20261110.
 - **Counterfactual twins.** Every stored trial is re-run without the agent
-  phase, without the human phase, and with one storage partition per
+  phase, without the human phase, and, where applicable, with one storage partition per
   controller. A relay counts only if the effect needs both phases.
 - **State rules** (`handoff_witness/lineage.py`): service-worker lineage, taint
   from observed state writes, and host taint. They only add agent roots, so
@@ -70,13 +66,15 @@ by 18.1 points [10.4, 26.4], all of it when the restricted option is labeled A
 (45/72 vs 0/72); the gate delivers 0 of 486 restricted and 310 of 310 public
 proposals.
 
+The full collector detected agent involvement in 40/45 joint effects and identified both parties in 35/45. All five agent-only labels occurred in the service-worker trials.
+
 ## Build
 
-From the repository root:
+To build just the PDF from a clone, run the directory-creation and Tectonic commands below. To rebuild the complete package, extract the [full artifact](https://github.com/kshafeekm/handoff-witness/releases/tag/v0.3.1) and run the entire block from its root:
 
 ```sh
 python paper/analyze.py
-python paper/analyze_steering.py --source artifacts/steering-v2-20261109 --browser artifacts/steering-browser-v2-20261109
+python paper/analyze_steering.py
 mkdir -p output/pdf
 tectonic --keep-logs --keep-intermediates --outdir output/pdf paper/main.tex
 python paper/package.py

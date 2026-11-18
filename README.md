@@ -13,49 +13,19 @@ approval before browser execution, and audit retained instruction changes.
 [Threat model](docs/THREAT_MODEL.md) · [Contributing](CONTRIBUTING.md) ·
 [Citation](#citation)
 
-No release is published yet. The Git checkout holds the code, paper source, and
-compact results; the paper PDF and the archive with raw runs are built by
-`paper/package.py` (see [Paper and reproduction](paper/README.md)).
+[Download the manuscript and full reproducibility archive (v0.3.1)](https://github.com/kshafeekm/handoff-witness/releases/tag/v0.3.1). The full archive includes the raw runs needed to reproduce the results tables. The Git checkout contains the collector, fixtures, manuscript source, and compact measurements.
 
-A runnable research prototype that preserves recorded request origins when control
-changes between a human and an agent. An agent-originated timer can fire after a
-human takes over; the current controller is not necessarily the initiating actor.
+A person opens a page after taking over from an agent. The page makes a second request only because it finds a value the agent left behind. Its request history points to the person, but removing either party's action prevents delivery.
 
-**Status: experimental, pre-publication. Novelty is unverified.** This project
-authenticates recorder statements, not human intent, physical input, or legal
-responsibility. It does not detect access to prohibited sites or determine laws.
+Handoff Witness studies whether the agent contributed to issuing a particular request. The experiment compares three rules on the same 45 jointly caused effects and 15 human-only control effects per seed:
 
-**Version 0.3** corrects a guarantee that version 0.2 overstated. Agent
-actions routed through a mediated, logged channel can be evidenced positively;
-human origin cannot be evidenced from a browser transcript, so the collector
-emits `not_agent` (exclusion), never `human`. Version 0.2 said that label was
-sound under complete mediation. It also needs *state isolation*: no
-agent-written state reachable when the request is made. A handoff breaks that
-on purpose, because the cookies, storage, workers and server session that let a
-person continue an agent's work also let the agent's work continue through the
-person.
+| Evidence used | Joint effects labeled free of agent involvement | Human-only effects flagged as mixed |
+|---|---:|---:|
+| Request lineage | 40/45 | 0/15 |
+| Add service-worker lineage and track observed state writes | 15/45 | 5/15 |
+| Also flag hosts the agent contacted | 5/45 | 10/15 |
 
-On a predeclared 32-template workload (375 targets), a collector that follows
-request lineage alone reports 40 of 45 requests that depend on agent-written
-state as `not_agent`, with mediation complete. Counterfactual twins confirm
-each of the 45 needs both parties. Following observed state writes leaves 15;
-tainting every host the agent contacted leaves 5 and contests 10 of 15
-human-only controls. The last 5 are server state shared across host names,
-which no browser-side observer sees. One storage partition per controller
-blocks all six client-state relays, neither server-state relay, and legitimate
-continuity by the same mechanism. A deployment can have shared state, an
-exonerating label, or a sound one, but on this evidence not all three.
-
-The full collector labels 340 of 375 targets correctly, 10 wrong (the mediation
-bypass and the cross-host relay), 20 contested, 5 missing (popups); the
-current-controller baseline is wrong on 125. On the 20 templates of version 0.2
-every label matches that release (180 of 200). A second seed reproduces every
-count. A counterbalanced 1,152-output local-model pilot (appendix, unchanged)
-shows that the apparent effect of indirect pressure occurs only when the
-restricted option has the letter the models prefer; the fixed approval broker
-delivers none of the 486 restricted proposals and all 310 public ones.
-Everything is synthetic loopback data with simulated human actions. See
-[paper and reproduction](paper/README.md).
+The full collector detected agent involvement in 40 of 45 joint effects and identified both parties in 35. The five agent-only predictions were service-worker requests. The five missed contributions involved server state shared across hostnames. These results describe 32 authored scenarios with simulated human actions. The study treats physical identity, mental intent, and legal responsibility as separate questions.
 
 ## Quick start
 
@@ -278,7 +248,7 @@ Maintained by **Shafeek Kakkidumban Manayil**, Independent Researcher.
 Use [CITATION.cff](CITATION.cff) to cite the software. For the manuscript:
 
 > Shafeek Kakkidumban Manayil. *Who Caused the Access? Evidence Boundaries in Human-Agent
-> Browser Handoffs*. Unpublished manuscript, 2026.
+> Browser Handoffs*. Research preprint, version 0.3.1, 2026.
 
 No DOI or arXiv identifier has been assigned in this repository. Update citations
 to the published record when one becomes available.

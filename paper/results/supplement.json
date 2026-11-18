@@ -76,6 +76,22 @@
   "stored": {
     "joint_effect_targets": 45,
     "human_control_effect_targets": 15,
+    "joint_label_counts": {
+      "v02_full": {
+        "unknown": 5,
+        "not_agent": 40
+      },
+      "plus_state_write": {
+        "agent": 5,
+        "mixed": 25,
+        "not_agent": 15
+      },
+      "full": {
+        "agent": 5,
+        "mixed": 35,
+        "not_agent": 5
+      }
+    },
     "false_exoneration": {
       "v02_full": 40,
       "plus_state_write": 15,

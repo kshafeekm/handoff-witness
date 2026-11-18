@@ -53,6 +53,14 @@ def test_request_lineage_alone_exonerates_stored_state_relays():
     assert stored["false_exoneration"] == {"v02_full": 40, "plus_state_write": 15, "full": 5}
     assert stored["joint_unknown"] == {"v02_full": 5, "plus_state_write": 0, "full": 0}
     assert stored["contested_human_controls"] == {"v02_full": 0, "plus_state_write": 5, "full": 10}
+    for run in ("primary", "replication"):
+        _, run_report, run_rows = analyze.load_run(analyze.RUNS / run)
+        joint_labels = analyze.stored_summary(run_report, run_rows)["joint_label_counts"]
+        assert joint_labels == {
+            "v02_full": {"not_agent": 40, "unknown": 5},
+            "plus_state_write": {"mixed": 25, "agent": 5, "not_agent": 15},
+            "full": {"mixed": 35, "agent": 5, "not_agent": 5},
+        }
     partition = stored["partition"]
     assert (partition["relays_blocked"], partition["applicable_relay_trials"]) == (30, 40)
     assert partition["not_blocked"] == ["st_server_state_cross_host", "st_server_state_relay"]
